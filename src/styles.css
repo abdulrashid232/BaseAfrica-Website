@@ -2,6 +2,13 @@
 
 @import "tailwindcss";
 
+@theme {
+  --color-brand-primary: #1A3C5E;
+  --color-brand-secondary: #C49A1A;
+  --color-brand-tertiary: #2A7A4F;
+  --color-brand-neutral: #1C1C1C;
+}
+
 * {
   font-family: "Inter", sans-serif;
 }
