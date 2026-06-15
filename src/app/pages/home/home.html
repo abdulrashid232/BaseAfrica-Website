@@ -73,7 +73,7 @@
       <div class="lg:w-1/2 grid grid-cols-2 gap-4 w-full">
         @for (metric of trackRecordMetrics; track metric.label) {
           <div class="bg-white p-8 border border-gray-100 shadow-sm text-center">
-            <div class="text-4xl md:text-5xl font-extrabold text-brand-secondary mb-2">{{ metric.value }}</div>
+            <div class="text-4xl md:text-5xl font-extrabold text-brand-secondary mb-2" [appCountUp]="metric.value">{{ metric.value }}</div>
             <div class="text-brand-primary font-bold text-sm mb-1">{{ metric.label }}</div>
             <div class="text-gray-400 text-xs">{{ metric.detail }}</div>
           </div>

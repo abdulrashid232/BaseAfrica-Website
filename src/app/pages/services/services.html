@@ -1,80 +1,73 @@
 <app-header></app-header>
 
-<!-- Hero Section -->
+<!-- Hero -->
 <section class="w-full bg-brand-primary text-white py-24 md:py-32 relative overflow-hidden">
   <div class="absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary to-transparent z-10"></div>
-  <!-- Using a placeholder background element to simulate the image shown on the right -->
   <div class="absolute inset-y-0 right-0 w-2/3 md:w-1/2 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay z-0"></div>
-  
   <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-20">
     <div class="max-w-2xl">
       <h3 class="text-brand-secondary font-bold tracking-[0.2em] uppercase text-xs mb-4">What We Do</h3>
       <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">Our Services</h1>
       <p class="text-blue-100 text-lg md:text-xl leading-relaxed font-medium">
-        OpenBaseAfrica provides end-to-end offshore operations assistance, unlocking global execution excellence in high-growth tech environments across Africa.
+        End-to-end offshore operations—from finding your office to running your team. Every service bundled into a single partnership or available standalone.
       </p>
     </div>
   </div>
 </section>
 
-<!-- Strategic Operational Solutions (Grid) -->
+<!-- Service Categories -->
 <section class="w-full py-24 bg-white">
   <div class="container mx-auto px-6 md:px-12 max-w-7xl">
     <div class="mb-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">Strategic Operational Solutions</h2>
-      <p class="text-gray-500 font-medium">Scalable building blocks for your offshore success.</p>
+      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">Service Categories</h2>
+      <p class="text-gray-500 font-medium max-w-2xl">Each service has a clear scope, deliverables, and timeline. Mix and match or take the full package.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-      @for (service of servicesList; track service.title) {
-        <div class="bg-white p-8 rounded border border-gray-100 shadow-sm hover:shadow-md transition-shadow">
-          <lucide-angular [img]="service.icon" class="w-6 h-6 text-brand-secondary mb-6"></lucide-angular>
-          <h3 class="text-lg font-bold text-brand-primary mb-3 leading-snug">{{ service.title }}</h3>
-          <p class="text-gray-500 text-sm leading-relaxed">{{ service.description }}</p>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      @for (category of serviceCategories; track category.title) {
+        <div class="bg-gray-50 p-8 md:p-10 border border-gray-100 hover:border-brand-secondary/30 transition-colors">
+          <div class="flex items-start gap-4 mb-5">
+            <div class="w-11 h-11 bg-brand-primary/10 rounded flex items-center justify-center shrink-0">
+              <lucide-angular [img]="category.icon" class="w-5 h-5 text-brand-primary"></lucide-angular>
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-brand-primary leading-snug">{{ category.title }}</h3>
+            </div>
+          </div>
+          <p class="text-gray-500 text-sm leading-relaxed mb-5">{{ category.description }}</p>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
+            @for (item of category.items; track item) {
+              <li class="flex items-start gap-2 text-sm text-gray-700">
+                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-tertiary mt-0.5 shrink-0"></lucide-angular>
+                <span>{{ item }}</span>
+              </li>
+            }
+          </ul>
         </div>
       }
     </div>
   </div>
 </section>
 
-<!-- Service Deep Dive -->
-<section class="w-full py-24 bg-gray-50">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="flex flex-col lg:flex-row gap-16 items-start">
-      
-      <!-- Left: Title -->
-      <div class="lg:w-1/3">
-        <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-4">Service Deep Dive</h2>
-        <p class="text-gray-500 leading-relaxed font-medium">
-          Explore how our specialized teams plug right into your organization.
-        </p>
+<!-- Custom Offshore Build – Flagship -->
+<section class="w-full py-24 bg-brand-primary text-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-secondary/5 blur-3xl"></div>
+  <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+    <div class="flex flex-col lg:flex-row gap-12 items-start">
+      <div class="lg:w-2/5">
+        <span class="inline-block bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4">{{ customBuild.tagline }}</span>
+        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">{{ customBuild.title }}</h2>
+        <p class="text-blue-100 leading-relaxed">{{ customBuild.description }}</p>
+        <a routerLink="/contact" class="inline-flex items-center gap-2 mt-8 bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold px-8 py-3.5 rounded transition-colors text-sm">
+          Discuss Your Build
+          <lucide-angular [img]="icons.ArrowRight" class="w-4 h-4"></lucide-angular>
+        </a>
       </div>
-
-      <!-- Right: Detailed Cards -->
-      <div class="lg:w-2/3 flex flex-col gap-8">
-        @for (feature of deepDiveFeatures; track feature.title) {
-          <div class="bg-white p-8 md:p-10 rounded shadow-sm border border-gray-100">
-            <h3 class="text-xl font-bold text-brand-primary mb-4">{{ feature.title }}</h3>
-            <p class="text-gray-600 mb-8 leading-relaxed text-sm md:text-base">{{ feature.description }}</p>
-            
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <ul class="space-y-3">
-                @for (item of feature.list1; track item) {
-                  <li class="flex items-start gap-3">
-                    <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></lucide-angular>
-                    <span class="text-gray-700 text-sm font-medium">{{ item }}</span>
-                  </li>
-                }
-              </ul>
-              <ul class="space-y-3">
-                @for (item of feature.list2; track item) {
-                  <li class="flex items-start gap-3">
-                    <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-secondary mt-1 shrink-0"></lucide-angular>
-                    <span class="text-gray-700 text-sm font-medium">{{ item }}</span>
-                  </li>
-                }
-              </ul>
-            </div>
+      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        @for (item of customBuild.items; track item) {
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-5">
+            <lucide-angular [img]="icons.Check" class="w-5 h-5 text-brand-secondary shrink-0"></lucide-angular>
+            <span class="text-sm font-medium">{{ item }}</span>
           </div>
         }
       </div>
@@ -82,54 +75,108 @@
   </div>
 </section>
 
-<!-- Operational Tiers -->
-<section class="w-full py-24 bg-gray-50 border-t border-gray-200">
-  <div class="container mx-auto px-6 md:px-12 max-w-5xl">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-4">Operational Tiers</h2>
-      <p class="text-gray-500 font-medium">Select the level of partnership that fits your growth stage.</p>
+<!-- Packages -->
+<section class="w-full py-24 bg-gray-50">
+  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">Engagement Packages</h2>
+      <p class="text-gray-500 font-medium">Most clients start with one of these bundled packages. Ranges are indicative—a firm quote follows a scoping conversation.</p>
     </div>
 
-    <div class="overflow-x-auto bg-white rounded shadow-sm border border-gray-100">
-      <table class="w-full text-left border-collapse min-w-[600px]">
-        <thead>
-          <tr class="bg-brand-primary text-white">
-            <th class="p-6 font-bold tracking-wide uppercase text-xs border-b border-brand-primary/20">Feature</th>
-            <th class="p-6 font-bold tracking-wide uppercase text-xs border-b border-brand-primary/20 border-l border-white/10">Basic</th>
-            <th class="p-6 font-bold tracking-wide uppercase text-xs border-b border-brand-primary/20 border-l border-white/10 text-brand-secondary">Pro</th>
-            <th class="p-6 font-bold tracking-wide uppercase text-xs border-b border-brand-primary/20 border-l border-white/10">Enterprise</th>
-          </tr>
-        </thead>
-        <tbody class="text-sm font-medium text-gray-700">
-          @for (tier of tiers; track tier.feature) {
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors">
-              <td class="p-6 text-brand-primary font-bold">{{ tier.feature }}</td>
-              <td class="p-6 border-l border-gray-100 text-gray-500">{{ tier.basic }}</td>
-              <td class="p-6 border-l border-gray-100 font-bold text-gray-900 bg-brand-secondary/5">{{ tier.pro }}</td>
-              <td class="p-6 border-l border-gray-100 text-gray-500">{{ tier.enterprise }}</td>
-            </tr>
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+      @for (pkg of packages; track pkg.name) {
+        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow"
+             [class]="pkg.featured ? 'border-brand-secondary shadow-lg ring-2 ring-brand-secondary/20' : 'border-gray-100 shadow-sm hover:shadow-md'">
+          @if (pkg.featured) {
+            <span class="self-start bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4">Most Popular</span>
           }
-        </tbody>
-      </table>
+          <h3 class="text-2xl font-extrabold text-brand-primary mb-1">{{ pkg.name }}</h3>
+          <div class="text-brand-secondary font-bold text-lg mb-4">{{ pkg.range }}</div>
+          <p class="text-gray-500 text-sm leading-relaxed mb-6">{{ pkg.description }}</p>
+          <ul class="space-y-3 mb-8 flex-1">
+            @for (item of pkg.coverage; track item) {
+              <li class="flex items-center gap-3 text-sm text-gray-700">
+                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-tertiary shrink-0"></lucide-angular>
+                {{ item }}
+              </li>
+            }
+          </ul>
+          <a routerLink="/contact" class="block text-center font-semibold py-3 rounded transition-colors text-sm"
+             [class]="pkg.featured ? 'bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary' : 'bg-brand-primary hover:bg-brand-primary/90 text-white'">
+            Book a Consultation
+          </a>
+        </div>
+      }
+    </div>
+
+    <p class="text-center text-gray-400 text-xs mt-8">All ranges are indicative. Final pricing is confirmed after a scoping conversation to match your exact requirements.</p>
+  </div>
+</section>
+
+<!-- How It Works – Visual Timeline -->
+<section class="w-full py-24 bg-white">
+  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">How It Works</h2>
+      <p class="text-gray-500 font-medium">From first conversation to fully operational team in roughly eight weeks.</p>
+    </div>
+
+    <!-- Desktop Timeline -->
+    <div class="hidden md:block relative">
+      <!-- Connecting line -->
+      <div class="absolute top-[52px] left-[10%] right-[10%] h-[3px] bg-brand-primary/20"></div>
+      <div class="flex justify-between relative">
+        @for (step of timeline; track step.stage; let i = $index) {
+          <div class="flex flex-col items-center text-center w-1/5 px-2">
+            <!-- Circle node -->
+            <div class="w-[42px] h-[42px] rounded-full flex items-center justify-center text-base font-extrabold mb-6 shadow-md z-10 border-4 border-white"
+                 [class]="i === 0 ? 'bg-brand-secondary text-brand-primary' : 'bg-brand-primary text-brand-secondary'">
+              {{ i + 1 }}
+            </div>
+            <h4 class="text-base font-bold text-brand-primary mb-1">{{ step.stage }}</h4>
+            <span class="text-brand-secondary text-xs font-bold uppercase tracking-wide mb-2">{{ step.duration }}</span>
+            <p class="text-gray-500 text-xs leading-relaxed max-w-[180px] mx-auto">{{ step.description }}</p>
+          </div>
+        }
+      </div>
+    </div>
+
+    <!-- Mobile Timeline (vertical) -->
+    <div class="md:hidden space-y-6">
+      @for (step of timeline; track step.stage; let i = $index) {
+        <div class="flex gap-4 items-start">
+          <div class="flex flex-col items-center">
+            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold shrink-0 shadow"
+                 [class]="i === 0 ? 'bg-brand-secondary text-brand-primary' : 'bg-brand-primary text-brand-secondary'">
+              {{ i + 1 }}
+            </div>
+            @if (i < timeline.length - 1) {
+              <div class="w-[2px] h-full min-h-[48px] bg-brand-primary/20 mt-2"></div>
+            }
+          </div>
+          <div class="pb-6">
+            <h4 class="text-base font-bold text-brand-primary">{{ step.stage }}</h4>
+            <span class="text-brand-secondary text-xs font-bold uppercase tracking-wide">{{ step.duration }}</span>
+            <p class="text-gray-500 text-sm mt-1 leading-relaxed">{{ step.description }}</p>
+          </div>
+        </div>
+      }
     </div>
   </div>
 </section>
 
-<!-- CTA Section -->
+<!-- CTA -->
 <section class="w-full py-24 bg-gray-100">
   <div class="container mx-auto px-6 md:px-12 max-w-5xl">
     <div class="bg-brand-primary rounded-xl p-12 md:p-20 text-center shadow-lg relative overflow-hidden">
-      <!-- Decorative background glow -->
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-brand-secondary/10 blur-3xl rounded-full"></div>
-      
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 relative z-10">Start Building Your Team in Africa</h2>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 relative z-10">Ready to Get Started?</h2>
       <p class="text-blue-100 mb-10 max-w-2xl mx-auto font-medium relative z-10 text-sm md:text-base">
-        Join the world's most innovative companies leveraging Africa's talent pools and operational efficiency with OpenBaseAfrica as your local operational ally.
+        Book a free 30-minute consultation. We'll scope your needs, recommend a package, and give you a firm quote—no obligations.
       </p>
-      
-      <button routerLink="/contact" class="relative z-10 bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold text-lg px-12 py-4 rounded shadow transition-transform hover:-translate-y-1">
-        Get Started
-      </button>
+      <a routerLink="/contact" class="relative z-10 inline-block bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold text-lg px-12 py-4 rounded shadow transition-transform hover:-translate-y-1">
+        Book a Consultation
+      </a>
     </div>
   </div>
 </section>

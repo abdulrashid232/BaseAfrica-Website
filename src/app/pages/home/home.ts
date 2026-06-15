@@ -6,12 +6,13 @@ import { HeroSection } from '../../core/hero-section/hero-section';
 import { Header } from '../../core/header/header';
 import { RouterOutlet } from '@angular/router';
 import { LucideAngularModule, Search, Building2, Users, Rocket, TrendingUp, Globe, Clock, DollarSign, ShieldCheck, ArrowRight, Check, MapPin } from 'lucide-angular';
+import { CountUp } from '../../directives/count-up';
 
 @Component({
   selector: 'app-home',
   imports: [
     Footer, WhyChooseUs, HeroSection, Header,
-    RouterOutlet, RouterLink, LucideAngularModule
+    RouterOutlet, RouterLink, LucideAngularModule, CountUp
   ],
   templateUrl: './home.html',
   styleUrl: './home.css',
