@@ -1,0 +1,25 @@
+/* ── Route Transition Loading Bar ── */
+.route-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99998;
+  height: 3px;
+  background: rgba(26, 60, 94, 0.08);
+  overflow: hidden;
+}
+
+.route-loader__bar {
+  height: 100%;
+  width: 30%;
+  background: #C49A1A;
+  border-radius: 0 2px 2px 0;
+  animation: route-sweep 1.2s ease-in-out infinite;
+}
+
+@keyframes route-sweep {
+  0%   { transform: translateX(-100%); width: 30%; }
+  50%  { transform: translateX(200%);  width: 60%; }
+  100% { transform: translateX(-100%); width: 30%; }
+}

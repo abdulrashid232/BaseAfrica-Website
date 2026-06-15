@@ -1,3 +1,8 @@
-
+<!-- Route transition loading bar -->
+@if (loading()) {
+  <div class="route-loader">
+    <div class="route-loader__bar"></div>
+  </div>
+}
 
 <router-outlet />
