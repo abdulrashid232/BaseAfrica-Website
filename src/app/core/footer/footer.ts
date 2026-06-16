@@ -10,10 +10,10 @@ import { LucideAngularModule, Facebook, Twitter, Linkedin, Instagram } from 'luc
 })
 export class Footer {
   socialLinks = [
-    { name: 'LinkedIn', icon: Linkedin, url: '#' },
-    { name: 'Twitter', icon: Twitter, url: '#' },
-    { name: 'Facebook', icon: Facebook, url: '#' },
-    { name: 'Instagram', icon: Instagram, url: '#' }
+    { name: 'LinkedIn', icon: Linkedin, url: 'https://www.linkedin.com/company/open-base-africa/' },
+    { name: 'Twitter', icon: Twitter, url: 'https://x.com/openbaseafrica' },
+    { name: 'Facebook', icon: Facebook, url: 'https://www.facebook.com/profile.php?id=61590864658081' },
+    { name: 'Instagram', icon: Instagram, url: 'https://www.instagram.com/openbaseafrica/' }
   ];
 
   footerColumns = [
