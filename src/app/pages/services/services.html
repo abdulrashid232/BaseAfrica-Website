@@ -1,14 +1,14 @@
 <app-header></app-header>
 
 <!-- Hero -->
-<section class="w-full bg-brand-primary text-white py-24 md:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary to-transparent z-10"></div>
+<section class="w-full bg-navy text-white py-pad relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy to-transparent z-10"></div>
   <div class="absolute inset-y-0 right-0 w-2/3 md:w-1/2 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay z-0"></div>
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-20">
-    <div class="max-w-2xl">
-      <h3 class="text-brand-secondary font-bold tracking-[0.2em] uppercase text-xs mb-4">What We Do</h3>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">Our Services</h1>
-      <p class="text-blue-100 text-lg md:text-xl leading-relaxed font-medium">
+  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-20">
+    <div class="max-w-2xl reveal-on-scroll">
+      <h3 class="kicker mb-4">What We Do</h3>
+      <h1 class="text-white mb-6">Our Services</h1>
+      <p class="text-ink-light text-lead">
         End-to-end offshore operations—from finding your office to running your team. Every service bundled into a single partnership or available standalone.
       </p>
     </div>
@@ -16,29 +16,29 @@
 </section>
 
 <!-- Service Categories -->
-<section class="w-full py-24 bg-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="mb-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">Service Categories</h2>
-      <p class="text-gray-500 font-medium max-w-2xl">Each service has a clear scope, deliverables, and timeline. Mix and match or take the full package.</p>
+<section class="w-full py-pad bg-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="mb-16 reveal-on-scroll">
+      <h2 class="text-navy mb-3">Service Categories</h2>
+      <p class="text-ink font-medium max-w-2xl">Each service has a clear scope, deliverables, and timeline. Mix and match or take the full package.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
       @for (category of serviceCategories; track category.title) {
-        <div class="bg-gray-50 p-8 md:p-10 border border-gray-100 hover:border-brand-secondary/30 transition-colors">
+        <div class="bg-mist p-8 md:p-10 border border-line rounded-[8px] card-hover reveal-on-scroll" [revealIndex]="$index">
           <div class="flex items-start gap-4 mb-5">
-            <div class="w-11 h-11 bg-brand-primary/10 rounded flex items-center justify-center shrink-0">
-              <lucide-angular [img]="category.icon" class="w-5 h-5 text-brand-primary"></lucide-angular>
+            <div class="w-11 h-11 bg-navy/10 rounded flex items-center justify-center shrink-0">
+              <lucide-angular [img]="category.icon" class="w-5 h-5 text-navy"></lucide-angular>
             </div>
             <div>
-              <h3 class="text-lg font-bold text-brand-primary leading-snug">{{ category.title }}</h3>
+              <h3 class="text-lg font-bold text-navy leading-snug">{{ category.title }}</h3>
             </div>
           </div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-5">{{ category.description }}</p>
+          <p class="text-ink text-sm leading-relaxed mb-5">{{ category.description }}</p>
           <ul class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2">
             @for (item of category.items; track item) {
-              <li class="flex items-start gap-2 text-sm text-gray-700">
-                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-tertiary mt-0.5 shrink-0"></lucide-angular>
+              <li class="flex items-start gap-2 text-sm text-ink-nav">
+                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-navy mt-0.5 shrink-0"></lucide-angular>
                 <span>{{ item }}</span>
               </li>
             }
@@ -50,23 +50,23 @@
 </section>
 
 <!-- Custom Offshore Build – Flagship -->
-<section class="w-full py-24 bg-brand-primary text-white relative overflow-hidden">
-  <div class="absolute top-0 right-0 w-1/3 h-full bg-brand-secondary/5 blur-3xl"></div>
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-10">
+<section class="w-full py-pad bg-navy text-white relative overflow-hidden">
+  <div class="absolute top-0 right-0 w-1/3 h-full bg-gold/5 blur-3xl"></div>
+  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-10">
     <div class="flex flex-col lg:flex-row gap-12 items-start">
-      <div class="lg:w-2/5">
-        <span class="inline-block bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4">{{ customBuild.tagline }}</span>
-        <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-6">{{ customBuild.title }}</h2>
-        <p class="text-blue-100 leading-relaxed">{{ customBuild.description }}</p>
-        <a routerLink="/contact" class="inline-flex items-center gap-2 mt-8 bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold px-8 py-3.5 rounded transition-colors text-sm">
+      <div class="lg:w-2/5 reveal-on-scroll">
+        <span class="inline-block bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-[4px]">{{ customBuild.tagline }}</span>
+        <h2 class="text-white mb-6">{{ customBuild.title }}</h2>
+        <p class="text-ink-light leading-relaxed">{{ customBuild.description }}</p>
+        <a routerLink="/contact" class="inline-flex items-center gap-2 mt-8 bg-gold hover:bg-gold/90 text-navy font-bold px-8 py-3.5 rounded-[5px] transition-colors text-sm">
           Discuss Your Build
           <lucide-angular [img]="icons.ArrowRight" class="w-4 h-4"></lucide-angular>
         </a>
       </div>
-      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-[24px] reveal-on-scroll">
         @for (item of customBuild.items; track item) {
-          <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-5">
-            <lucide-angular [img]="icons.Check" class="w-5 h-5 text-brand-secondary shrink-0"></lucide-angular>
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-5 rounded-[8px]">
+            <lucide-angular [img]="icons.Check" class="w-5 h-5 text-gold shrink-0"></lucide-angular>
             <span class="text-sm font-medium">{{ item }}</span>
           </div>
         }
@@ -76,66 +76,67 @@
 </section>
 
 <!-- Packages -->
-<section class="w-full py-24 bg-gray-50">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">Engagement Packages</h2>
-      <p class="text-gray-500 font-medium">Most clients start with one of these bundled packages. Ranges are indicative—a firm quote follows a scoping conversation.</p>
+<section class="w-full py-pad bg-mist">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h2 class="text-navy mb-3">Engagement Packages</h2>
+      <p class="text-ink font-medium">Most clients start with one of these bundled packages. Ranges are indicative—a firm quote follows a scoping conversation.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch">
       @for (pkg of packages; track pkg.name) {
-        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow"
-             [class]="pkg.featured ? 'border-brand-secondary shadow-lg ring-2 ring-brand-secondary/20' : 'border-gray-100 shadow-sm hover:shadow-md'">
+        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow rounded-[8px] reveal-on-scroll"
+             [ngClass]="pkg.featured ? 'border-gold shadow-lg ring-2 ring-gold/20' : 'border-line shadow-sm hover:shadow-md'"
+             [revealIndex]="$index">
           @if (pkg.featured) {
-            <span class="self-start bg-brand-secondary text-brand-primary text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4">Most Popular</span>
+            <span class="self-start bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-[4px]">Most Popular</span>
           }
-          <h3 class="text-2xl font-extrabold text-brand-primary mb-1">{{ pkg.name }}</h3>
-          <div class="text-brand-secondary font-bold text-lg mb-4">{{ pkg.range }}</div>
-          <p class="text-gray-500 text-sm leading-relaxed mb-6">{{ pkg.description }}</p>
+          <h3 class="text-2xl font-extrabold text-navy mb-1">{{ pkg.name }}</h3>
+          <div class="text-gold font-bold text-lg mb-4">{{ pkg.range }}</div>
+          <p class="text-ink text-sm leading-relaxed mb-6">{{ pkg.description }}</p>
           <ul class="space-y-3 mb-8 flex-1">
             @for (item of pkg.coverage; track item) {
-              <li class="flex items-center gap-3 text-sm text-gray-700">
-                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-brand-tertiary shrink-0"></lucide-angular>
+              <li class="flex items-center gap-3 text-sm text-ink-nav">
+                <lucide-angular [img]="icons.Check" class="w-4 h-4 text-navy shrink-0"></lucide-angular>
                 {{ item }}
               </li>
             }
           </ul>
-          <a routerLink="/contact" class="block text-center font-semibold py-3 rounded transition-colors text-sm"
-             [class]="pkg.featured ? 'bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary' : 'bg-brand-primary hover:bg-brand-primary/90 text-white'">
-            Book a Consultation
+          <a routerLink="/contact" class="block text-center font-semibold py-3 rounded-[5px] transition-colors text-sm"
+             [ngClass]="pkg.featured ? 'bg-gold hover:bg-gold/90 text-navy' : 'bg-navy hover:bg-navy/90 text-white'">
+            Learn More
           </a>
         </div>
       }
     </div>
 
-    <p class="text-center text-gray-400 text-xs mt-8">All ranges are indicative. Final pricing is confirmed after a scoping conversation to match your exact requirements.</p>
+    <p class="text-center text-ink-nav text-xs mt-8">All ranges are indicative. Final pricing is confirmed after a scoping conversation to match your exact requirements.</p>
   </div>
 </section>
 
 <!-- How It Works – Visual Timeline -->
-<section class="w-full py-24 bg-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="text-center mb-16">
-      <h2 class="text-3xl font-extrabold text-brand-primary tracking-tight mb-3">How It Works</h2>
-      <p class="text-gray-500 font-medium">From first conversation to fully operational team in roughly eight weeks.</p>
+<section class="w-full py-pad bg-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="text-center mb-16 reveal-on-scroll">
+      <h2 class="text-navy mb-3">How It Works</h2>
+      <p class="text-ink font-medium">From first conversation to fully operational team in roughly eight weeks.</p>
     </div>
 
     <!-- Desktop Timeline -->
     <div class="hidden md:block relative">
       <!-- Connecting line -->
-      <div class="absolute top-[52px] left-[10%] right-[10%] h-[3px] bg-brand-primary/20"></div>
+      <div class="absolute top-[52px] left-[10%] right-[10%] h-[3px] bg-navy/20"></div>
       <div class="flex justify-between relative">
         @for (step of timeline; track step.stage; let i = $index) {
-          <div class="flex flex-col items-center text-center w-1/5 px-2">
+          <div class="flex flex-col items-center text-center w-1/5 px-2 reveal-on-scroll" [revealIndex]="i">
             <!-- Circle node -->
             <div class="w-[42px] h-[42px] rounded-full flex items-center justify-center text-base font-extrabold mb-6 shadow-md z-10 border-4 border-white"
-                 [class]="i === 0 ? 'bg-brand-secondary text-brand-primary' : 'bg-brand-primary text-brand-secondary'">
+                 [ngClass]="i === 0 ? 'bg-gold text-navy' : 'bg-navy text-gold'">
               {{ i + 1 }}
             </div>
-            <h4 class="text-base font-bold text-brand-primary mb-1">{{ step.stage }}</h4>
-            <span class="text-brand-secondary text-xs font-bold uppercase tracking-wide mb-2">{{ step.duration }}</span>
-            <p class="text-gray-500 text-xs leading-relaxed max-w-[180px] mx-auto">{{ step.description }}</p>
+            <h4 class="text-base font-bold text-navy mb-1">{{ step.stage }}</h4>
+            <span class="text-gold text-xs font-bold uppercase tracking-wide mb-2">{{ step.duration }}</span>
+            <p class="text-ink text-xs leading-relaxed max-w-[180px] mx-auto">{{ step.description }}</p>
           </div>
         }
       </div>
@@ -144,20 +145,20 @@
     <!-- Mobile Timeline (vertical) -->
     <div class="md:hidden space-y-6">
       @for (step of timeline; track step.stage; let i = $index) {
-        <div class="flex gap-4 items-start">
+        <div class="flex gap-4 items-start reveal-on-scroll" [revealIndex]="i">
           <div class="flex flex-col items-center">
-            <div class="w-10 h-10 rounded-full flex items-center justify-center text-sm font-extrabold shrink-0 shadow"
-                 [class]="i === 0 ? 'bg-brand-secondary text-brand-primary' : 'bg-brand-primary text-brand-secondary'">
-              {{ i + 1 }}
+            <div class="w-12 h-12 rounded-full flex items-center justify-center text-xl font-black shrink-0 relative z-10"
+               [ngClass]="i === 0 ? 'bg-gold text-navy' : 'bg-navy text-gold'">
+            {{ i + 1 }}
             </div>
             @if (i < timeline.length - 1) {
-              <div class="w-[2px] h-full min-h-[48px] bg-brand-primary/20 mt-2"></div>
+              <div class="w-[2px] h-full min-h-[48px] bg-navy/20 mt-2"></div>
             }
           </div>
           <div class="pb-6">
-            <h4 class="text-base font-bold text-brand-primary">{{ step.stage }}</h4>
-            <span class="text-brand-secondary text-xs font-bold uppercase tracking-wide">{{ step.duration }}</span>
-            <p class="text-gray-500 text-sm mt-1 leading-relaxed">{{ step.description }}</p>
+            <h4 class="text-base font-bold text-navy">{{ step.stage }}</h4>
+            <span class="text-gold text-xs font-bold uppercase tracking-wide">{{ step.duration }}</span>
+            <p class="text-ink text-sm mt-1 leading-relaxed">{{ step.description }}</p>
           </div>
         </div>
       }
@@ -166,15 +167,15 @@
 </section>
 
 <!-- CTA -->
-<section class="w-full py-24 bg-gray-100">
-  <div class="container mx-auto px-6 md:px-12 max-w-5xl">
-    <div class="bg-brand-primary rounded-xl p-12 md:p-20 text-center shadow-lg relative overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-brand-secondary/10 blur-3xl rounded-full"></div>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 relative z-10">Ready to Get Started?</h2>
-      <p class="text-blue-100 mb-10 max-w-2xl mx-auto font-medium relative z-10 text-sm md:text-base">
+<section class="w-full py-pad bg-mist">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="bg-navy rounded-[12px] p-12 md:p-20 text-center shadow-lg relative overflow-hidden reveal-on-scroll">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gold/10 blur-3xl rounded-full"></div>
+      <h2 class="text-white mb-6 relative z-10">Ready to Get Started?</h2>
+      <p class="text-ink-light mb-10 max-w-2xl mx-auto text-lead relative z-10">
         Book a free 30-minute consultation. We'll scope your needs, recommend a package, and give you a firm quote—no obligations.
       </p>
-      <a routerLink="/contact" class="relative z-10 inline-block bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold text-lg px-12 py-4 rounded shadow transition-transform hover:-translate-y-1">
+      <a routerLink="/contact" class="relative z-10 inline-block btn-primary px-12 py-4 text-lg">
         Book a Consultation
       </a>
     </div>

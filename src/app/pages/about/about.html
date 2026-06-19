@@ -1,14 +1,14 @@
 <app-header></app-header>
 
 <!-- Hero -->
-<section class="bg-brand-primary text-white py-24 md:py-32 relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-r from-brand-primary via-brand-primary to-transparent z-10"></div>
+<section class="bg-navy text-white py-pad relative overflow-hidden">
+  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy to-transparent z-10"></div>
   <div class="absolute inset-y-0 right-0 w-2/3 md:w-1/2 bg-[url('https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-30 mix-blend-overlay z-0"></div>
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl relative z-20">
-    <div class="max-w-2xl">
-      <h3 class="text-brand-secondary font-bold tracking-[0.2em] uppercase text-xs mb-4">About Us</h3>
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6">The Control of In-House.<br>The Cost of Outsourcing.</h1>
-      <p class="text-blue-100 text-lg md:text-xl leading-relaxed font-medium">
+  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-20">
+    <div class="max-w-2xl reveal-on-scroll">
+      <h3 class="kicker mb-4">About Us</h3>
+      <h1 class="text-white mb-6">The Control of In-House.<br>The Cost of Outsourcing.</h1>
+      <p class="text-ink-light text-lead">
         We build and run full offshore operations for global companies—so you get the quality of your own team without the setup burden.
       </p>
     </div>
@@ -16,14 +16,14 @@
 </section>
 
 <!-- Mission & Vision – The Gap We Fill -->
-<section class="w-full py-24 bg-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+<section class="w-full py-pad bg-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-      <div>
-        <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">Our Mission</h3>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-6">Bridging the Gap Between In-House and Outsourcing</h2>
-        <div class="text-gray-600 space-y-4 leading-relaxed">
+      <div class="reveal-on-scroll">
+        <h3 class="kicker mb-4">Our Mission</h3>
+        <h2 class="text-navy mb-6">Bridging the Gap Between In-House and Outsourcing</h2>
+        <div class="text-ink space-y-4 leading-relaxed">
           <p>
             Traditional outsourcing gives you a vendor with pooled resources and limited accountability. Building your own offshore team from scratch is expensive, slow, and risky.
           </p>
@@ -33,10 +33,10 @@
         </div>
       </div>
 
-      <div class="bg-gray-50 border border-gray-100 p-8 md:p-10">
-        <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">Our Vision</h3>
-        <h4 class="text-2xl font-bold text-brand-primary mb-6">The Operating Partner of Choice for Global Companies Entering Africa</h4>
-        <div class="text-gray-600 space-y-4 leading-relaxed">
+      <div class="bg-mist border border-line p-8 md:p-10 rounded-[8px] reveal-on-scroll">
+        <h3 class="kicker mb-4">Our Vision</h3>
+        <h4 class="text-2xl font-bold text-navy mb-6">The Operating Partner of Choice for Global Companies Entering Africa</h4>
+        <div class="text-ink space-y-4 leading-relaxed">
           <p>
             We see a future where any ambitious company—regardless of size or geography—can build a world-class African operation without navigating the complexity alone.
           </p>
@@ -51,22 +51,22 @@
 </section>
 
 <!-- What Sets Us Apart -->
-<section class="w-full py-24 bg-gray-50">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">Not Another Outsourcer</h3>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-4">What Sets Us Apart</h2>
-      <p class="text-gray-500 leading-relaxed">We're not a staffing agency or a BPO. We're your operational partner on the ground.</p>
+<section class="w-full py-pad bg-mist">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h3 class="kicker mb-4">Not Another Outsourcer</h3>
+      <h2 class="text-navy mb-4">What Sets Us Apart</h2>
+      <p class="text-ink leading-relaxed">We're not a staffing agency or a BPO. We're your operational partner on the ground.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
       @for (item of differentiators; track item.title) {
-        <div class="bg-white p-8 border border-gray-100 hover:border-brand-secondary/30 transition-colors">
-          <div class="w-11 h-11 bg-brand-primary/10 rounded flex items-center justify-center mb-6">
-            <lucide-angular [img]="item.icon" class="w-5 h-5 text-brand-primary"></lucide-angular>
+        <div class="bg-white p-8 card-hover reveal-on-scroll" [revealIndex]="$index">
+          <div class="w-11 h-11 bg-navy/10 rounded flex items-center justify-center mb-6">
+            <lucide-angular [img]="item.icon" class="w-5 h-5 text-navy"></lucide-angular>
           </div>
-          <h4 class="text-lg font-bold text-brand-primary mb-3">{{ item.title }}</h4>
-          <p class="text-gray-500 text-sm leading-relaxed">{{ item.description }}</p>
+          <h4 class="text-lg font-bold text-navy mb-3">{{ item.title }}</h4>
+          <p class="text-ink text-sm leading-relaxed">{{ item.description }}</p>
         </div>
       }
     </div>
@@ -74,29 +74,29 @@
 </section>
 
 <!-- Leadership Team -->
-<section class="w-full py-24 bg-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">Leadership</h3>
-      <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-4">The Team Behind the Operation</h2>
-      <p class="text-gray-500 leading-relaxed">Experienced operators who have built, managed, and scaled offshore teams from the ground up.</p>
+<section class="w-full py-pad bg-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h3 class="kicker mb-4">Leadership</h3>
+      <h2 class="text-navy mb-4">The Team Behind the Operation</h2>
+      <p class="text-ink leading-relaxed">Experienced operators who have built, managed, and scaled offshore teams from the ground up.</p>
     </div>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[24px]">
       @for (member of team; track member.name) {
-        <div class="text-center group">
+        <div class="text-center group reveal-on-scroll" [revealIndex]="$index">
           <!-- Headshot placeholder -->
-          <div class="w-full aspect-square bg-gray-100 border border-gray-200 mb-6 overflow-hidden relative flex items-center justify-center">
+          <div class="w-full aspect-square bg-mist border border-line mb-6 rounded-[8px] overflow-hidden relative flex items-center justify-center card-hover">
             @if (member.image) {
               <img [src]="member.image" [alt]="member.name" class="w-full h-full object-cover">
             } @else {
               <!-- Placeholder with initials -->
-              <div class="text-brand-primary/20 text-6xl font-extrabold select-none">{{ member.name.split(' ').map(n => n[0]).join('').slice(0, 2) }}</div>
+              <div class="text-navy/20 text-6xl font-extrabold select-none">{{ member.name.split(' ').map(n => n[0]).join('').slice(0, 2) }}</div>
             }
           </div>
-          <h4 class="text-lg font-bold text-brand-primary mb-1">{{ member.name }}</h4>
-          <p class="text-brand-secondary text-sm font-semibold mb-3">{{ member.role }}</p>
-          <p class="text-gray-500 text-sm leading-relaxed">{{ member.bio }}</p>
+          <h4 class="text-lg font-bold text-navy mb-1">{{ member.name }}</h4>
+          <p class="text-gold text-sm font-semibold mb-3">{{ member.role }}</p>
+          <p class="text-ink text-sm leading-relaxed">{{ member.bio }}</p>
         </div>
       }
     </div>
@@ -104,23 +104,23 @@
 </section>
 
 <!-- Why Ghana -->
-<section class="w-full py-24 bg-brand-primary text-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
-    <div class="text-center max-w-3xl mx-auto mb-16">
-      <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">Our Base</h3>
-      <h2 class="text-3xl md:text-4xl font-extrabold tracking-tight mb-4">Why Ghana</h2>
-      <p class="text-blue-100 leading-relaxed">Ghana isn't just affordable—it's one of the easiest places in Africa for foreign businesses to set up and operate.</p>
+<section class="w-full py-pad bg-navy text-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+      <h3 class="kicker mb-4">Our Base</h3>
+      <h2 class="text-white mb-4">Why Ghana</h2>
+      <p class="text-ink-light text-lead">Ghana isn't just affordable—it's one of the easiest places in Africa for foreign businesses to set up and operate.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
       @for (point of ghanaPoints; track point.title) {
-        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-6 hover:border-brand-secondary/30 transition-colors">
-          <div class="w-10 h-10 bg-brand-secondary/20 rounded flex items-center justify-center shrink-0">
-            <lucide-angular [img]="point.icon" class="w-5 h-5 text-brand-secondary"></lucide-angular>
+        <div class="flex items-start gap-4 bg-white/5 border border-white/10 p-6 rounded-[8px] hover:border-gold/30 transition-colors reveal-on-scroll" [revealIndex]="$index">
+          <div class="w-10 h-10 bg-gold/20 rounded flex items-center justify-center shrink-0">
+            <lucide-angular [img]="point.icon" class="w-5 h-5 text-gold"></lucide-angular>
           </div>
           <div>
-            <h4 class="text-base font-bold mb-2">{{ point.title }}</h4>
-            <p class="text-blue-100 text-sm leading-relaxed">{{ point.description }}</p>
+            <h4 class="text-base font-bold text-white mb-2">{{ point.title }}</h4>
+            <p class="text-ink-light text-sm leading-relaxed">{{ point.description }}</p>
           </div>
         </div>
       }
@@ -129,30 +129,30 @@
 </section>
 
 <!-- Where We're Going Next -->
-<section class="w-full py-24 bg-gray-50">
-  <div class="container mx-auto px-6 md:px-12 max-w-7xl">
+<section class="w-full py-pad bg-mist">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16 items-start">
 
-      <div class="lg:w-2/5">
-        <h3 class="text-xs font-bold text-brand-secondary tracking-[0.2em] uppercase mb-4">What's Next</h3>
-        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-primary tracking-tight mb-6">New Countries.<br>New Industries.</h2>
-        <p class="text-gray-600 leading-relaxed mb-8">
+      <div class="lg:w-2/5 reveal-on-scroll">
+        <h3 class="kicker mb-4">What's Next</h3>
+        <h2 class="text-navy mb-6">New Countries.<br>New Industries.</h2>
+        <p class="text-ink leading-relaxed mb-8">
           Ghana is our proving ground. The model we've refined here—build, staff, manage, scale—is portable. We're actively expanding into new geographies and specialised industry verticals.
         </p>
-        <a routerLink="/contact" class="inline-flex items-center gap-2 text-sm font-semibold text-brand-primary border-b border-dashed border-brand-primary pb-0.5 hover:text-brand-secondary hover:border-brand-secondary transition-colors">
+        <a routerLink="/contact" class="inline-flex items-center gap-2 text-sm font-semibold text-navy border-b border-dashed border-navy pb-0.5 hover:text-gold hover:border-gold transition-colors">
           Discuss Expansion Plans
           <lucide-angular [img]="icons.ArrowRight" class="w-4 h-4"></lucide-angular>
         </a>
       </div>
 
-      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-[24px] reveal-on-scroll">
         @for (item of roadmap; track item.label; let i = $index) {
-          <div class="bg-white p-6 border border-gray-100 hover:border-brand-secondary/30 transition-colors">
-            <div class="w-8 h-8 bg-brand-secondary/20 rounded flex items-center justify-center mb-4">
-              <span class="text-brand-primary font-extrabold text-sm">{{ i + 1 }}</span>
+          <div class="bg-white p-6 card-hover">
+            <div class="w-8 h-8 bg-gold/20 rounded flex items-center justify-center mb-4">
+              <span class="text-navy font-extrabold text-sm">{{ i + 1 }}</span>
             </div>
-            <h4 class="text-base font-bold text-brand-primary mb-2">{{ item.label }}</h4>
-            <p class="text-gray-500 text-sm leading-relaxed">{{ item.description }}</p>
+            <h4 class="text-base font-bold text-navy mb-2">{{ item.label }}</h4>
+            <p class="text-ink text-sm leading-relaxed">{{ item.description }}</p>
           </div>
         }
       </div>
@@ -162,15 +162,15 @@
 </section>
 
 <!-- CTA -->
-<section class="w-full py-24 bg-white">
-  <div class="container mx-auto px-6 md:px-12 max-w-5xl">
-    <div class="bg-brand-primary rounded-xl p-12 md:p-20 text-center shadow-lg relative overflow-hidden">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-brand-secondary/10 blur-3xl rounded-full"></div>
-      <h2 class="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white tracking-tight mb-6 relative z-10">Want to Know More?</h2>
-      <p class="text-blue-100 mb-10 max-w-2xl mx-auto font-medium relative z-10 text-sm md:text-base">
+<section class="w-full py-pad bg-white">
+  <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="bg-navy rounded-[12px] p-12 md:p-20 text-center shadow-lg relative overflow-hidden reveal-on-scroll">
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gold/10 blur-3xl rounded-full"></div>
+      <h2 class="text-white mb-6 relative z-10">Want to Know More?</h2>
+      <p class="text-ink-light mb-10 max-w-2xl mx-auto text-lead relative z-10">
         Book a call with our team. We'll walk you through the model, share case studies, and answer any questions about operating in Africa.
       </p>
-      <a routerLink="/contact" class="relative z-10 inline-block bg-brand-secondary hover:bg-brand-secondary/90 text-brand-primary font-bold text-lg px-12 py-4 rounded shadow transition-transform hover:-translate-y-1">
+      <a routerLink="/contact" class="relative z-10 inline-block btn-primary px-12 py-4 text-lg">
         Book a Consultation
       </a>
     </div>

@@ -1,49 +1,51 @@
-<header class="w-full h-16 flex items-center justify-between px-6 md:px-6 lg:px-8 bg-white shadow fixed z-50">
-   <h1 class="text-2xl lg:text-3xl font-bold text-brand-primary">
-      <a routerLink="/home">
-         <img src="/assets/Main Logo.png" alt="main-logo" class="h-24 w-auto">
-      </a>
-   </h1> 
-
-   <!-- Desktop Navigation -->
-   <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
-      @for (link of navLinks; track link.label) {
-         <a [routerLink]="link.url" routerLinkActive="!text-brand-secondary !border-brand-secondary" [routerLinkActiveOptions]="{exact: link.url === '/'}" class="text-gray-600 font-medium border-b-2 border-transparent hover:text-brand-secondary hover:border-brand-secondary py-1 transition-all duration-200">
-            {{ link.label }}
+<header class="w-full h-[74px] flex items-center justify-center px-6 bg-white fixed z-50 transition-shadow duration-300" [class.header-scrolled]="isScrolled">
+   <div class="w-full max-w-[1180px] flex items-center justify-between">
+      <h1 class="text-2xl lg:text-3xl font-bold text-navy">
+         <a routerLink="/home">
+            <img src="/assets/Main Logo.png" alt="main-logo" class="h-24 w-auto">
          </a>
-      }
-   </nav>
+      </h1> 
 
-   <!-- Desktop CTA Button -->
-   <div class="hidden lg:block">
-      <button routerLink="/contact" class="bg-brand-secondary text-white px-5 py-2 rounded-md font-medium hover:bg-brand-secondary/90 transition-colors duration-200 shadow-sm hover:shadow">
-         Book a Call
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-6 xl:gap-8">
+         @for (link of navLinks; track link.label) {
+            <a [routerLink]="link.url" routerLinkActive="!text-gold !border-gold" [routerLinkActiveOptions]="{exact: link.url === '/'}" class="text-ink-nav font-medium border-b-2 border-transparent hover:text-gold hover:border-gold py-1 transition-all duration-200">
+               {{ link.label }}
+            </a>
+         }
+      </nav>
+
+      <!-- Desktop CTA Button -->
+      <div class="hidden lg:block">
+         <button routerLink="/contact" class="btn-primary shadow-sm hover:shadow">
+            Book a Call
+         </button>
+      </div>
+
+      <!-- Mobile Menu Toggle Button -->
+      <button class="lg:hidden text-navy focus:outline-none p-2" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu">
+         <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            @if (isMobileMenuOpen) {
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            } @else {
+               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            }
+         </svg>
       </button>
    </div>
-
-   <!-- Mobile Menu Toggle Button -->
-   <button class="lg:hidden text-brand-primary focus:outline-none p-2" (click)="toggleMobileMenu()" aria-label="Toggle mobile menu">
-      <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-         @if (isMobileMenuOpen) {
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-         } @else {
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
-         }
-      </svg>
-   </button>
 </header>
 
 <!-- Mobile Navigation Menu -->
 @if (isMobileMenuOpen) {
-   <div class="lg:hidden fixed top-16 left-0 w-full bottom-0 bg-white z-40 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
+   <div class="lg:hidden fixed top-[74px] left-0 w-full bottom-0 bg-white z-40 overflow-y-auto animate-in fade-in slide-in-from-top-2 duration-200">
       <nav class="flex flex-col px-6 py-6 space-y-5">
          @for (link of navLinks; track link.label) {
-            <a [routerLink]="link.url" routerLinkActive="!text-brand-secondary underline underline-offset-4" [routerLinkActiveOptions]="{exact: link.url === '/'}" class="text-lg text-gray-700 font-medium hover:text-brand-secondary hover:underline hover:underline-offset-4 transition-colors duration-200" (click)="toggleMobileMenu()">
+            <a [routerLink]="link.url" routerLinkActive="!text-gold underline underline-offset-4" [routerLinkActiveOptions]="{exact: link.url === '/'}" class="text-lg text-ink-nav font-medium hover:text-gold hover:underline hover:underline-offset-4 transition-colors duration-200" (click)="toggleMobileMenu()">
                {{ link.label }}
             </a>
          }
-         <div class="pt-4 border-t border-gray-100">
-            <button routerLink="/contact" (click)="toggleMobileMenu()" class="w-full bg-brand-secondary text-white px-5 py-3 rounded-md font-medium hover:bg-brand-secondary/90 transition-colors duration-200 shadow-sm">
+         <div class="pt-4 border-t border-line">
+            <button routerLink="/contact" (click)="toggleMobileMenu()" class="w-full btn-primary shadow-sm">
                Book a Call
             </button>
          </div>

@@ -1,9 +1,11 @@
 import { Component } from '@angular/core';
 import { LucideAngularModule, Banknote, Users, History, ShieldCheck } from 'lucide-angular';
+import { NgClass } from '@angular/common';
+import { ScrollReveal } from '../../directives/scroll-reveal';
 
 @Component({
   selector: 'app-why-choose-us',
-  imports: [LucideAngularModule],
+  imports: [LucideAngularModule, NgClass, ScrollReveal],
   templateUrl: './why-choose-us.html',
   styleUrl: './why-choose-us.css',
 })

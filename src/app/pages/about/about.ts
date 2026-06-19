@@ -3,10 +3,11 @@ import { RouterLink } from '@angular/router';
 import { Header } from '../../core/header/header';
 import { Footer } from '../../core/footer/footer';
 import { LucideAngularModule, Shield, Users, Clock, DollarSign, Globe, MapPin, ArrowRight, Check, Building2, TrendingUp } from 'lucide-angular';
+import { ScrollReveal } from '../../directives/scroll-reveal';
 
 @Component({
   selector: 'app-about',
-  imports: [Header, Footer, RouterLink, LucideAngularModule],
+  imports: [Header, Footer, RouterLink, LucideAngularModule, ScrollReveal],
   templateUrl: './about.html',
   styleUrl: './about.css',
 })

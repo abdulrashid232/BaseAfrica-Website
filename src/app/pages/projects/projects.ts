@@ -4,6 +4,7 @@ import { Header } from '../../core/header/header';
 import { Footer } from '../../core/footer/footer';
 import { LucideAngularModule, X, ChevronLeft, ChevronRight, MapPin, Users, Building2, Clock, Check } from 'lucide-angular';
 import { CountUp } from '../../directives/count-up';
+import { ScrollReveal } from '../../directives/scroll-reveal';
 
 interface ProjectImage {
   src: string;
@@ -25,7 +26,7 @@ interface Project {
 
 @Component({
   selector: 'app-projects',
-  imports: [Header, Footer, RouterLink, LucideAngularModule, CountUp],
+  imports: [Header, Footer, RouterLink, LucideAngularModule, CountUp, ScrollReveal],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
