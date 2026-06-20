@@ -37,7 +37,7 @@ export class Services {
     {
       icon: Cog,
       title: 'Full Operations Management',
-      description: 'We take accountability for results, not just tasks—your dedicated ops manager owns the outcomes.',
+      description: 'We take accountability for results, not just tasks your dedicated ops manager owns the outcomes.',
       items: ['Workflow design & SOP creation', 'KPI framework & dashboards', 'Dedicated operations manager', 'Quality assurance & SLA tracking', 'Escalation management', 'Continuous improvement cycles']
     },
     {
@@ -69,7 +69,7 @@ export class Services {
   customBuild = {
     title: 'Custom Offshore Build',
     tagline: 'Our Flagship Offer',
-    description: 'The full package—a turnkey offshore operation designed, built, and run entirely by OpenBaseAfrica. You bring the vision; we deliver everything else.',
+    description: 'The full package, a turnkey offshore operation designed, built, and run entirely by OpenBaseAfrica. You bring the vision; we deliver everything else.',
     items: [
       'End-to-end project management',
       'Legal entity formation & compliance',

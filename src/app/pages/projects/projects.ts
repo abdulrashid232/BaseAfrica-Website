@@ -67,7 +67,7 @@ export class Projects {
       sector: 'Ticket Brokerage',
       title: 'US Ticket Brokerage – Full Offshore Operation',
       location: 'Ghana (3 branches)',
-      summary: 'A US-based ticket brokerage needed a reliable, scalable offshore team to handle high-volume operations around the clock. We built and ran the entire African operation from scratch—office, people, systems, and daily management.',
+      summary: 'A US-based ticket brokerage needed a reliable, scalable offshore team to handle high-volume operations around the clock. We built and ran the entire African operation from scratch, office, people, systems, and daily management.',
       whatWeDid: [
         'Opened 3 branches across Ghana',
         'Recruited and managed 100–150 staff at peak',
@@ -80,7 +80,7 @@ export class Projects {
         '24/7 operation running without US management oversight',
         'Senior leadership freed from day-to-day ticketing ops',
         'Significantly lower cost per processed unit',
-        'Scalable capacity—team grew from 10 to 150+ in under a year',
+        'Scalable capacity team grew from 10 to 150+ in under a year',
         '100% client retention across the engagement'
       ],
       metrics: [

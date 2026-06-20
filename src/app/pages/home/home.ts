@@ -27,7 +27,7 @@ export class Home {
     { icon: Search, title: 'Find the Office', description: 'We source and secure the right commercial space in Ghana, handling lease negotiations, fit-out, and infrastructure to your specifications.' },
     { icon: Users, title: 'Hire & Train the Team', description: 'Our talent team recruits, vets, and onboards English-speaking professionals, then runs structured training aligned to your processes and culture.' },
     { icon: Building2, title: 'Set Up Systems', description: 'We deploy IT hardware, secure networks, productivity tooling, and enterprise-grade security so your team is operational from day one.' },
-    { icon: Rocket, title: 'Manage Performance', description: 'Day-to-day operations, KPI tracking, HR, payroll, and continuous improvement—handled locally so you can focus on growth.' }
+    { icon: Rocket, title: 'Manage Performance', description: 'Day-to-day operations, KPI tracking, HR, payroll, and continuous improvement, handled locally so you can focus on growth.' }
   ];
 
   // Track Record metrics
@@ -76,8 +76,8 @@ export class Home {
   // Trust markers
   trustMarkers = [
     { icon: MapPin, title: 'Ghana Operating Base', description: 'Stable democracy, strong rule of law, and a growing tech ecosystem.' },
-    { icon: Globe, title: 'English-Speaking Workforce', description: "Ghana's official language is English—seamless communication, zero translation overhead." },
+    { icon: Globe, title: 'English-Speaking Workforce', description: "Ghana's official language is English, seamless communication, zero translation overhead." },
     { icon: Clock, title: 'Time-Zone Overlap', description: 'GMT alignment gives 4–6 hours of overlap with US East Coast and full overlap with Europe.' },
-    { icon: DollarSign, title: 'USD Contracts', description: 'All engagements priced and invoiced in USD—no currency risk for international clients.' }
+    { icon: DollarSign, title: 'USD Contracts', description: 'All engagements priced and invoiced in USD, no currency risk for international clients.' }
   ];
 }

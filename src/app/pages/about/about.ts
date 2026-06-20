@@ -19,7 +19,7 @@ export class About {
     {
       icon: Building2,
       title: 'We Build the Operation',
-      description: 'Standard outsourcing hands you a vendor. We build a fully functioning operation—office, team, systems, management—that runs as if it were your own.'
+      description: 'Standard outsourcing hands you a vendor. We build a fully functioning operation, office, team, systems, management, that runs as if it were your own.'
     },
     {
       icon: Shield,
@@ -29,12 +29,12 @@ export class About {
     {
       icon: Users,
       title: 'Dedicated Teams, Not Pooled Resources',
-      description: 'Every recruit is hired specifically for your workflows, trained on your processes, and managed to your standards—never shared across clients.'
+      description: 'Every recruit is hired specifically for your workflows, trained on your processes, and managed to your standards, never shared across clients.'
     },
     {
       icon: TrendingUp,
       title: 'Built to Scale',
-      description: 'Our model is designed from the ground up for growth. Start with 5 people, scale to 150+—same infrastructure, same management rigour.'
+      description: 'Our model is designed from the ground up for growth. Start with 5 people, scale to 150+, same infrastructure, same management rigour.'
     }
   ];
 
@@ -55,7 +55,7 @@ export class About {
     {
       name: 'Kofi Safo',
       role: 'Director of Operations',
-      bio: 'Runs day-to-day operations across all branches—infrastructure, compliance, facility management, and operational KPIs.',
+      bio: 'Runs day-to-day operations across all branches, infrastructure, compliance, facility management, and operational KPIs.',
       image: ''
     },
     {
@@ -69,7 +69,7 @@ export class About {
   // Why Ghana
   ghanaPoints = [
     { icon: Shield, title: 'Political Stability', description: 'One of Africa\'s most stable democracies with peaceful transitions of power, strong institutions, and a business-friendly regulatory environment.' },
-    { icon: Globe, title: 'English-Speaking Workforce', description: 'English is the official language of government, education, and business—zero translation overhead for international clients.' },
+    { icon: Globe, title: 'English-Speaking Workforce', description: 'English is the official language of government, education, and business, zero translation overhead for international clients.' },
     { icon: Clock, title: 'Time-Zone Alignment', description: 'Ghana operates on GMT, providing 4–6 hours of overlap with the US East Coast and full working-day overlap with Europe and the UK.' },
     { icon: DollarSign, title: 'Straightforward for Foreign Business', description: 'No restrictions on foreign ownership, USD-denominated contracts, established banking channels, and a growing ecosystem of professional services.' }
   ];
