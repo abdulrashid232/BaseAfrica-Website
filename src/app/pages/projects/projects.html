@@ -5,8 +5,8 @@
   <div class="absolute inset-0">
     <img src="assets/hero_bg.png" alt="Background" class="w-full h-full object-cover opacity-30 mix-blend-overlay">
   </div>
-  <div class="relative w-full max-w-[1180px] mx-auto px-6 reveal-on-scroll">
-    <span class="inline-block px-3 py-1 bg-gold/20 text-gold text-sm font-semibold tracking-wider rounded-[4px] mb-6 uppercase">Our Work</span>
+  <div class="relative w-full max-w-295 mx-auto px-6 reveal-on-scroll">
+    <span class="inline-block px-3 py-1 bg-gold/20 text-gold text-sm font-semibold tracking-wider rounded-sm mb-6 uppercase">Our Work</span>
     <h1 class="text-white mb-6 max-w-3xl leading-tight">Real Operations.<br>Real Results.</h1>
     <p class="text-ink-light text-lead max-w-2xl">
       Proof of execution—not pitches. Every project below was built and run by the OpenBaseAfrica team on the ground.
@@ -17,7 +17,7 @@
 <!-- Featured Project -->
 @if (featuredProject) {
   <section class="py-pad bg-white">
-    <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="w-full max-w-295 mx-auto px-6">
 
       <!-- Section label -->
       <div class="mb-12 reveal-on-scroll">
@@ -28,15 +28,15 @@
       </div>
 
       <!-- Top: Image Gallery + Overview -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[24px] items-start mb-16">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start mb-16">
 
         <!-- Left: Gallery -->
         <div class="reveal-on-scroll">
           <!-- Main image (clickable) -->
-          <div class="relative rounded-[8px] overflow-hidden shadow-lg cursor-pointer group mb-3 card-hover"
+          <div class="relative rounded-lg overflow-hidden shadow-lg cursor-pointer group mb-3 card-hover"
                (click)="openLightbox(featuredProject!.images, 0)">
             <img [src]="featuredProject.images[0].src" [alt]="featuredProject.images[0].alt"
-                 class="w-full aspect-[4/3] object-cover group-hover:scale-105 transition-transform duration-500">
+                 class="w-full aspect-4/3 object-cover group-hover:scale-105 transition-transform duration-500">
             <div class="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
               <span class="opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 text-navy font-semibold text-sm px-4 py-2 rounded-[5px]">Click to enlarge</span>
             </div>
@@ -70,7 +70,7 @@
           <!-- Headline Metrics -->
           <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8">
             @for (metric of featuredProject.metrics; track metric.label) {
-              <div class="bg-mist border border-line p-4 text-center rounded-[8px]">
+              <div class="bg-mist border border-line p-4 text-center rounded-lg">
                 <div class="text-2xl md:text-3xl font-extrabold text-gold" [appCountUp]="metric.value">{{ metric.value }}</div>
                 <div class="text-xs text-ink-nav font-medium uppercase tracking-wide mt-1">{{ metric.label }}</div>
               </div>
@@ -80,9 +80,9 @@
       </div>
 
       <!-- What We Did + What Changed (side by side) -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[24px] reveal-on-scroll">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-on-scroll">
         <!-- What We Did -->
-        <div class="bg-mist border border-line p-8 md:p-10 rounded-[8px]">
+        <div class="bg-mist border border-line p-8 md:p-10 rounded-lg">
           <h3 class="text-xl font-bold text-navy mb-6 flex items-center gap-2">
             <lucide-angular [img]="icons.Building2" class="w-5 h-5 text-gold"></lucide-angular>
             What We Did
@@ -98,7 +98,7 @@
         </div>
 
         <!-- What Changed -->
-        <div class="bg-navy text-white p-8 md:p-10 rounded-[8px]">
+        <div class="bg-navy text-white p-8 md:p-10 rounded-lg">
           <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
             <lucide-angular [img]="icons.Users" class="w-5 h-5 text-gold"></lucide-angular>
             What Changed for Them
@@ -121,15 +121,15 @@
 <!-- Other Projects Grid -->
 @if (regularProjects.length > 0) {
   <section class="py-pad bg-mist">
-    <div class="w-full max-w-[1180px] mx-auto px-6">
+    <div class="w-full max-w-295 mx-auto px-6">
       <div class="mb-12 reveal-on-scroll">
         <h2 class="text-navy mb-3">More Projects</h2>
         <p class="text-ink font-medium">Additional operations we've built and run across Africa.</p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         @for (project of regularProjects; track project.id) {
-          <div class="bg-white border border-line rounded-[8px] overflow-hidden flex flex-col group card-hover reveal-on-scroll" [revealIndex]="$index">
+          <div class="bg-white border border-line rounded-lg overflow-hidden flex flex-col group card-hover reveal-on-scroll" [revealIndex]="$index">
             <!-- Primary image (clickable for gallery) -->
             @if (project.images.length > 0) {
               <div class="relative h-56 w-full overflow-hidden cursor-pointer"
@@ -143,7 +143,7 @@
                 </div>
               </div>
             }
-            <div class="p-6 flex flex-col flex-grow">
+            <div class="p-6 flex flex-col grow">
               <div class="flex flex-wrap gap-2 mb-3">
                 <span class="px-3 py-1 text-xs font-semibold bg-navy/10 text-navy rounded-full uppercase tracking-wide">{{ project.sector }}</span>
                 <span class="px-3 py-1 text-xs font-medium bg-mist text-ink rounded-full">{{ project.location }}</span>
@@ -172,9 +172,9 @@
 
 <!-- CTA -->
 <section class="py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
-    <div class="bg-navy rounded-[12px] relative overflow-hidden p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 reveal-on-scroll">
-      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+  <div class="w-full max-w-295 mx-auto px-6">
+    <div class="bg-navy rounded-xl relative overflow-hidden p-12 md:p-20 flex flex-col md:flex-row items-center justify-between gap-10 reveal-on-scroll">
+      <div class="absolute inset-0 opacity-20 bg-[radial-gradient(#ffffff_1px,transparent_1px)] bg-size-[16px_16px]"></div>
       <div class="relative z-10 max-w-2xl text-white">
         <h2 class="text-white mb-6">Want Results Like These?</h2>
         <p class="text-ink-light text-lead">Every operation above was built from zero by our team. Let's discuss what yours could look like.</p>
@@ -190,7 +190,7 @@
 
 <!-- Lightbox Modal -->
 @if (lightboxOpen) {
-  <div class="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center" (click)="closeLightbox()">
+  <div class="fixed inset-0 z-9999 bg-black/95 flex items-center justify-center" (click)="closeLightbox()">
     <!-- Close button -->
     <button class="absolute top-4 right-4 text-white/80 hover:text-white z-10 p-2" (click)="closeLightbox()">
       <lucide-angular [img]="icons.X" class="w-7 h-7"></lucide-angular>
@@ -208,7 +208,7 @@
     <div class="max-w-[90vw] max-h-[85vh] relative" (click)="$event.stopPropagation()">
       <img [src]="lightboxImages[lightboxIndex].src"
            [alt]="lightboxImages[lightboxIndex].alt"
-           class="max-w-full max-h-[85vh] object-contain rounded-[8px] shadow-2xl">
+           class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl">
       <p class="text-white/60 text-sm text-center mt-3">{{ lightboxImages[lightboxIndex].alt }} — {{ lightboxIndex + 1 }} / {{ lightboxImages.length }}</p>
     </div>
 

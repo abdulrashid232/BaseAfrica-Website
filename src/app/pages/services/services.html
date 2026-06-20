@@ -2,9 +2,9 @@
 
 <!-- Hero -->
 <section class="w-full bg-navy text-white py-pad relative overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-r from-navy via-navy to-transparent z-10"></div>
+  <div class="absolute inset-0 bg-linear-to-r from-navy via-navy to-transparent z-10"></div>
   <div class="absolute inset-y-0 right-0 w-2/3 md:w-1/2 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-40 mix-blend-overlay z-0"></div>
-  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-20">
+  <div class="w-full max-w-295 mx-auto px-6 relative z-20">
     <div class="max-w-2xl reveal-on-scroll">
       <h3 class="kicker mb-4">What We Do</h3>
       <h1 class="text-white mb-6">Our Services</h1>
@@ -17,15 +17,15 @@
 
 <!-- Service Categories -->
 <section class="w-full py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="mb-16 reveal-on-scroll">
       <h2 class="text-navy mb-3">Service Categories</h2>
       <p class="text-ink font-medium max-w-2xl">Each service has a clear scope, deliverables, and timeline. Mix and match or take the full package.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-[24px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
       @for (category of serviceCategories; track category.title) {
-        <div class="bg-mist p-8 md:p-10 border border-line rounded-[8px] card-hover reveal-on-scroll" [revealIndex]="$index">
+        <div class="bg-mist p-8 md:p-10 border border-line rounded-lg card-hover reveal-on-scroll" [revealIndex]="$index">
           <div class="flex items-start gap-4 mb-5">
             <div class="w-11 h-11 bg-navy/10 rounded flex items-center justify-center shrink-0">
               <lucide-angular [img]="category.icon" class="w-5 h-5 text-navy"></lucide-angular>
@@ -52,10 +52,10 @@
 <!-- Custom Offshore Build – Flagship -->
 <section class="w-full py-pad bg-navy text-white relative overflow-hidden">
   <div class="absolute top-0 right-0 w-1/3 h-full bg-gold/5 blur-3xl"></div>
-  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-10">
+  <div class="w-full max-w-295 mx-auto px-6 relative z-10">
     <div class="flex flex-col lg:flex-row gap-12 items-start">
       <div class="lg:w-2/5 reveal-on-scroll">
-        <span class="inline-block bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-[4px]">{{ customBuild.tagline }}</span>
+        <span class="inline-block bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-sm">{{ customBuild.tagline }}</span>
         <h2 class="text-white mb-6">{{ customBuild.title }}</h2>
         <p class="text-ink-light leading-relaxed">{{ customBuild.description }}</p>
         <a routerLink="/contact" class="inline-flex items-center gap-2 mt-8 bg-gold hover:bg-gold/90 text-navy font-bold px-8 py-3.5 rounded-[5px] transition-colors text-sm">
@@ -63,9 +63,9 @@
           <lucide-angular [img]="icons.ArrowRight" class="w-4 h-4"></lucide-angular>
         </a>
       </div>
-      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-[24px] reveal-on-scroll">
+      <div class="lg:w-3/5 grid grid-cols-1 sm:grid-cols-2 gap-6 reveal-on-scroll">
         @for (item of customBuild.items; track item) {
-          <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-5 rounded-[8px]">
+          <div class="flex items-center gap-3 bg-white/5 border border-white/10 p-5 rounded-lg">
             <lucide-angular [img]="icons.Check" class="w-5 h-5 text-gold shrink-0"></lucide-angular>
             <span class="text-sm font-medium">{{ item }}</span>
           </div>
@@ -77,19 +77,19 @@
 
 <!-- Packages -->
 <section class="w-full py-pad bg-mist">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
       <h2 class="text-navy mb-3">Engagement Packages</h2>
       <p class="text-ink font-medium">Most clients start with one of these bundled packages. Ranges are indicative—a firm quote follows a scoping conversation.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
       @for (pkg of packages; track pkg.name) {
-        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow rounded-[8px] reveal-on-scroll"
+        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow rounded-lg reveal-on-scroll"
              [ngClass]="pkg.featured ? 'border-gold shadow-lg ring-2 ring-gold/20' : 'border-line shadow-sm hover:shadow-md'"
              [revealIndex]="$index">
           @if (pkg.featured) {
-            <span class="self-start bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-[4px]">Most Popular</span>
+            <span class="self-start bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-sm">Most Popular</span>
           }
           <h3 class="text-2xl font-extrabold text-navy mb-1">{{ pkg.name }}</h3>
           <div class="text-gold font-bold text-lg mb-4">{{ pkg.range }}</div>
@@ -116,7 +116,7 @@
 
 <!-- How It Works – Visual Timeline -->
 <section class="w-full py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center mb-16 reveal-on-scroll">
       <h2 class="text-navy mb-3">How It Works</h2>
       <p class="text-ink font-medium">From first conversation to fully operational team in roughly eight weeks.</p>
@@ -125,18 +125,18 @@
     <!-- Desktop Timeline -->
     <div class="hidden md:block relative">
       <!-- Connecting line -->
-      <div class="absolute top-[52px] left-[10%] right-[10%] h-[3px] bg-navy/20"></div>
+      <div class="absolute top-13 left-[10%] right-[10%] h-0.75 bg-navy/20"></div>
       <div class="flex justify-between relative">
         @for (step of timeline; track step.stage; let i = $index) {
           <div class="flex flex-col items-center text-center w-1/5 px-2 reveal-on-scroll" [revealIndex]="i">
             <!-- Circle node -->
-            <div class="w-[42px] h-[42px] rounded-full flex items-center justify-center text-base font-extrabold mb-6 shadow-md z-10 border-4 border-white"
+            <div class="w-10.5 h-10.5 rounded-full flex items-center justify-center text-base font-extrabold mb-6 shadow-md z-10 border-4 border-white"
                  [ngClass]="i === 0 ? 'bg-gold text-navy' : 'bg-navy text-gold'">
               {{ i + 1 }}
             </div>
             <h4 class="text-base font-bold text-navy mb-1">{{ step.stage }}</h4>
             <span class="text-gold text-xs font-bold uppercase tracking-wide mb-2">{{ step.duration }}</span>
-            <p class="text-ink text-xs leading-relaxed max-w-[180px] mx-auto">{{ step.description }}</p>
+            <p class="text-ink text-xs leading-relaxed max-w-45 mx-auto">{{ step.description }}</p>
           </div>
         }
       </div>
@@ -152,7 +152,7 @@
             {{ i + 1 }}
             </div>
             @if (i < timeline.length - 1) {
-              <div class="w-[2px] h-full min-h-[48px] bg-navy/20 mt-2"></div>
+              <div class="w-0.5 h-full min-h-12 bg-navy/20 mt-2"></div>
             }
           </div>
           <div class="pb-6">
@@ -168,8 +168,8 @@
 
 <!-- CTA -->
 <section class="w-full py-pad bg-mist">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
-    <div class="bg-navy rounded-[12px] p-12 md:p-20 text-center shadow-lg relative overflow-hidden reveal-on-scroll">
+  <div class="w-full max-w-295 mx-auto px-6">
+    <div class="bg-navy rounded-xl p-12 md:p-20 text-center shadow-lg relative overflow-hidden reveal-on-scroll">
       <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gold/10 blur-3xl rounded-full"></div>
       <h2 class="text-white mb-6 relative z-10">Ready to Get Started?</h2>
       <p class="text-ink-light mb-10 max-w-2xl mx-auto text-lead relative z-10">

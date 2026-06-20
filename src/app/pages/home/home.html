@@ -8,14 +8,14 @@
 
 <!-- 3. What We Do – Build-and-Run Model -->
 <section class="w-full py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
       <h3 class="kicker mb-4">What We Do</h3>
       <h2 class="text-navy mb-4">We Build &amp; Run Your Offshore Operation</h2>
       <p class="text-ink leading-relaxed">Our end-to-end model takes you from idea to fully operational team—without the overhead of doing it yourself.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       @for (step of whatWeDoSteps; track step.title) {
         <div class="relative bg-mist p-8 card-hover group reveal-on-scroll" [revealIndex]="$index">
           <div class="w-12 h-12 bg-navy/5 rounded flex items-center justify-center mb-6 group-hover:bg-gold/20 transition-colors">
@@ -31,7 +31,7 @@
 
 <!-- 4. How It Works – Five-Stage Snapshot (reinforced) -->
 <section class="w-full py-pad bg-navy text-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center mb-16 reveal-on-scroll">
       <h3 class="kicker mb-4">How It Works</h3>
       <h2 class="text-white">From Discovery to Scale in Five Steps</h2>
@@ -39,7 +39,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
       @for (step of ['Discovery: We learn your goals, workflows & culture', 'Setup: Legal entity, office & infrastructure', 'Workforce Build: Recruit, vet & train your team', 'Launch: Operational kickoff with full support', 'Scale: Continuous growth & performance optimisation']; track step; let i = $index) {
-        <div class="flex flex-col items-center text-center p-6 bg-white/5 border border-white/10 hover:border-gold/40 transition-colors rounded-[8px] reveal-on-scroll" [revealIndex]="$index">
+        <div class="flex flex-col items-center text-center p-6 bg-white/5 border border-white/10 hover:border-gold/40 transition-colors rounded-lg reveal-on-scroll" [revealIndex]="$index">
           <div class="w-12 h-12 rounded-full bg-gold text-navy font-extrabold text-xl flex items-center justify-center mb-4">{{ i + 1 }}</div>
           <p class="text-sm font-medium leading-snug">{{ step }}</p>
         </div>
@@ -50,7 +50,7 @@
 
 <!-- 5. Track Record Snapshot -->
 <section class="w-full py-pad bg-mist">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="flex flex-col lg:flex-row gap-16 items-center">
 
       <!-- Left: Narrative -->
@@ -72,7 +72,7 @@
       <!-- Right: Metric Grid -->
       <div class="lg:w-1/2 grid grid-cols-2 gap-4 w-full reveal-on-scroll">
         @for (metric of trackRecordMetrics; track metric.label) {
-          <div class="bg-white p-8 border border-line shadow-sm text-center rounded-[8px]">
+          <div class="bg-white p-8 border border-line shadow-sm text-center rounded-lg">
             <div class="text-4xl md:text-5xl font-extrabold text-gold mb-2" [appCountUp]="metric.value">{{ metric.value }}</div>
             <div class="text-navy font-bold text-sm mb-1">{{ metric.label }}</div>
             <div class="text-ink-nav text-xs">{{ metric.detail }}</div>
@@ -85,16 +85,16 @@
 
 <!-- 6. Service Overview – Visual Cards linking to /services -->
 <section class="w-full py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
       <h3 class="kicker mb-4">Our Services</h3>
       <h2 class="text-navy mb-4">Everything You Need to Operate Offshore</h2>
       <p class="text-ink leading-relaxed">One partner for setup, talent, management, and compliance—so you can focus on your core business.</p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-[24px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       @for (service of serviceCards; track service.title) {
-        <a routerLink="/services" class="group bg-mist hover:bg-navy p-8 border border-line hover:border-navy transition-all duration-300 block rounded-[8px] reveal-on-scroll" [revealIndex]="$index">
+        <a routerLink="/services" class="group bg-mist hover:bg-navy p-8 border border-line hover:border-navy transition-all duration-300 block rounded-lg reveal-on-scroll" [revealIndex]="$index">
           <lucide-angular [img]="service.icon" class="w-7 h-7 text-gold mb-6"></lucide-angular>
           <h4 class="text-lg font-bold text-navy group-hover:text-white transition-colors mb-3">{{ service.title }}</h4>
           <p class="text-ink group-hover:text-ink-light text-sm leading-relaxed transition-colors">{{ service.description }}</p>
@@ -113,20 +113,20 @@
 
 <!-- 7. Packages Teaser -->
 <section class="w-full py-pad bg-mist">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
       <h3 class="kicker mb-4">Engagement Packages</h3>
       <h2 class="text-navy mb-4">Flexible Tiers for Every Growth Stage</h2>
       <p class="text-ink leading-relaxed">Whether you're testing the waters or building at scale, we have a package that fits.</p>
     </div>
 
-    <div class="grid grid-cols-1 lg:grid-cols-3 gap-[24px] items-stretch">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
       @for (pkg of packages; track pkg.name) {
-        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow rounded-[8px] reveal-on-scroll"
+        <div class="bg-white p-8 md:p-10 border flex flex-col transition-shadow rounded-lg reveal-on-scroll"
              [ngClass]="pkg.featured ? 'border-navy shadow-lg ring-2 ring-navy/20' : 'border-line shadow-sm hover:shadow-md'"
              [revealIndex]="$index">
           @if (pkg.featured) {
-            <span class="self-start bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-[4px]">Most Popular</span>
+            <span class="self-start bg-gold text-navy text-xs font-bold uppercase tracking-wide px-3 py-1 mb-4 rounded-sm">Most Popular</span>
           }
           <h4 class="text-2xl font-extrabold text-navy mb-1">{{ pkg.name }}</h4>
           <div class="text-gold font-bold text-lg mb-4">{{ pkg.range }}</div>
@@ -151,7 +151,7 @@
 
 <!-- 8. Trust Markers -->
 <section class="w-full py-pad bg-white border-t border-line">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
       <h3 class="kicker mb-4">Why Ghana</h3>
       <h2 class="text-navy mb-4">Built for Global Business</h2>
@@ -160,7 +160,7 @@
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       @for (marker of trustMarkers; track marker.title) {
-        <div class="flex items-start gap-4 p-6 bg-mist border border-line rounded-[8px] reveal-on-scroll" [revealIndex]="$index">
+        <div class="flex items-start gap-4 p-6 bg-mist border border-line rounded-lg reveal-on-scroll" [revealIndex]="$index">
           <div class="w-10 h-10 bg-navy/10 rounded flex items-center justify-center shrink-0">
             <lucide-angular [img]="marker.icon" class="w-5 h-5 text-navy"></lucide-angular>
           </div>
@@ -177,7 +177,7 @@
 <!-- 9. Closing Call-to-Action -->
 <section class="w-full py-pad bg-navy text-center relative overflow-hidden">
   <div class="absolute top-0 left-1/2 -translate-x-1/2 w-full h-1/2 bg-gold/10 blur-3xl rounded-full"></div>
-  <div class="w-full max-w-[1180px] mx-auto px-6 relative z-10 reveal-on-scroll">
+  <div class="w-full max-w-295 mx-auto px-6 relative z-10 reveal-on-scroll">
     <h2 class="text-white mb-6">Ready to Build Your<br class="hidden md:block"/> Team in Africa?</h2>
     <p class="text-ink-light text-lead mb-12 max-w-2xl mx-auto">
       Book a free 30-minute consultation with our operations team. We'll walk you through the model, timelines, and costs—no obligations.
