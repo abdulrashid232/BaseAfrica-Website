@@ -1,14 +1,12 @@
 <footer class="w-full bg-mist border-t-[6px] border-navy pt-16 pb-8 text-sm">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     
     <!-- Top Section: Links -->
-    <div class="grid grid-cols-1 md:grid-cols-4 gap-[24px] mb-16">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-6 mb-16">
       
       <!-- Column 1: Brand Info -->
       <div class="md:col-span-1">
-        <h2 class="text-xl font-extrabold text-navy mb-4">
-          <img src="/assets/Rec. Logo.png" alt="OpenBase Africa Logo" class="h-16 w-auto">
-        </h2>
+        <img src="/assets/Rec. Logo.png" alt="OpenBase Africa Logo" class="w-auto max-w-35 mb-4">
         <p class="text-ink leading-relaxed pr-4 font-medium">
           Professional operational scaling for the global enterprise in the African continent.
         </p>
@@ -37,7 +35,7 @@
       <div class="flex items-center gap-6">
         @for (social of socialLinks; track social.name) {
           <a [href]="social.url" class="text-ink-nav hover:text-navy transition-colors" [attr.aria-label]="social.name" target="_blank">
-            <lucide-angular [img]="social.icon" class="w-[18px] h-[18px]"></lucide-angular>
+            <lucide-angular [img]="social.icon" class="w-4.5 h-4.5"></lucide-angular>
           </a>
         }
       </div>
