@@ -111,6 +111,21 @@
     opacity: 1;
     transform: translateY(0);
   }
+
+  .bg-navy-pattern {
+    background-color: var(--color-navy);
+    background-image:
+      repeating-linear-gradient(
+        45deg,
+        rgba(200, 150, 12, 0.05) 0 2px,
+        transparent 2px 26px
+      ),
+      repeating-linear-gradient(
+        -45deg,
+        rgba(200, 150, 12, 0.05) 0 2px,
+        transparent 2px 26px
+      );
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
