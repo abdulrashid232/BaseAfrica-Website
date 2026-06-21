@@ -18,16 +18,21 @@
 
   <style>
     /* ==========================================
-       BOOTSTRAP LOADER
+       GLOBAL
     ========================================== */
 
     html,
     body {
       margin: 0;
       padding: 0;
+      width: 100%;
       height: 100%;
       overflow: hidden;
     }
+
+    /* ==========================================
+       LOADER
+    ========================================== */
 
     .app-loader {
       position: fixed;
@@ -39,16 +44,16 @@
       align-items: center;
       justify-content: center;
 
+      font-family: 'Inter', sans-serif;
+
       background-color: #0D2B4E;
 
-      /* Pattern matching screenshot */
+      /* Large Diamond Pattern */
       background-image:
-        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cg fill='none' stroke='%23A68A42' stroke-opacity='0.25' stroke-width='1'%3E%3Crect x='26' y='26' width='28' height='28' transform='rotate(45 40 40)'/%3E%3C/g%3E%3Ccircle cx='0' cy='40' r='1.5' fill='%23A68A42' fill-opacity='0.35'/%3E%3Ccircle cx='40' cy='0' r='1.5' fill='%23A68A42' fill-opacity='0.35'/%3E%3C/svg%3E");
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='96' height='96' viewBox='0 0 96 96'%3E%3Cg fill='none' stroke='%23A68A42' stroke-opacity='0.28' stroke-width='1'%3E%3Crect x='24' y='24' width='48' height='48' transform='rotate(45 48 48)'/%3E%3C/g%3E%3Ccircle cx='0' cy='48' r='2' fill='%23A68A42' fill-opacity='0.35'/%3E%3Ccircle cx='48' cy='0' r='2' fill='%23A68A42' fill-opacity='0.35'/%3E%3C/svg%3E");
 
       background-repeat: repeat;
-      background-size: 80px 80px;
-
-      font-family: 'Inter', sans-serif;
+      background-size: 96px 96px;
 
       transition:
         opacity .8s ease,
@@ -68,8 +73,8 @@
     .app-loader__logo {
       position: relative;
 
-      width: 122px;
-      height: 122px;
+      width: 130px;
+      height: 130px;
 
       margin-bottom: 28px;
 
@@ -84,33 +89,34 @@
       filter: brightness(0) invert(1);
     }
 
-    /* Rotating gold ring */
+    /* Rotating Gold Ring */
 
     .logo-ring {
       position: absolute;
-      inset: -19px;
+      top: -18px;
+      left: -18px;
 
-      width: 160px;
-      height: 160px;
+      width: 166px;
+      height: 166px;
 
-      animation: ringRotate 2.8s linear infinite;
+      animation: ringRotate 3s linear infinite;
     }
 
     /* ==========================================
-       BRAND NAME
+       BRAND TEXT
     ========================================== */
 
     .app-loader__text {
       color: #ffffff;
 
       font-family: 'Cinzel', serif;
-      font-size: 24px;
+      font-size: 26px;
       font-weight: 700;
 
-      letter-spacing: 0.08em;
+      letter-spacing: .08em;
       text-transform: uppercase;
 
-      margin-bottom: 24px;
+      margin-bottom: 26px;
     }
 
     .app-loader__text span {
@@ -122,10 +128,10 @@
     ========================================== */
 
     .app-loader__bar-track {
-      width: 180px;
-      height: 3px;
+      width: 200px;
+      height: 4px;
 
-      background: rgba(255,255,255,0.15);
+      background: rgba(255,255,255,.15);
 
       border-radius: 999px;
       overflow: hidden;
@@ -139,7 +145,7 @@
 
       border-radius: inherit;
 
-      animation: loaderSweep 2.5s ease-in-out infinite;
+      animation: loaderSweep 2.4s ease-in-out infinite;
     }
 
     /* ==========================================
@@ -147,14 +153,14 @@
     ========================================== */
 
     @keyframes logoPulse {
-      0%,100% {
-        opacity: 1;
+      0%, 100% {
         transform: scale(1);
+        opacity: 1;
       }
 
       50% {
-        opacity: .75;
         transform: scale(.96);
+        opacity: .8;
       }
     }
 
@@ -174,7 +180,7 @@
       }
 
       50% {
-        transform: translateX(150%);
+        transform: translateX(160%);
       }
 
       100% {
@@ -186,7 +192,7 @@
 
 <body>
 
-  <!-- Bootstrap Loader -->
+  <!-- Bootstrap Loading Screen -->
   <div class="app-loader" id="app-loader">
 
     <div class="app-loader__logo">
@@ -197,18 +203,18 @@
 
       <svg
         class="logo-ring"
-        viewBox="0 0 160 160"
+        viewBox="0 0 166 166"
         aria-hidden="true">
 
         <circle
-          cx="80"
-          cy="80"
-          r="74"
+          cx="83"
+          cy="83"
+          r="76"
           fill="none"
           stroke="#C8960C"
           stroke-width="2"
           stroke-linecap="round"
-          stroke-dasharray="60 400">
+          stroke-dasharray="70 410">
         </circle>
 
       </svg>
