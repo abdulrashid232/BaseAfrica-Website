@@ -1,5 +1,5 @@
 <section class="w-full py-pad bg-mist">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     
     <!-- Section Header -->
     <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
@@ -8,7 +8,7 @@
     </div>
 
     <!-- Features Grid -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[24px]">
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
       @for (feature of features; track feature.title) {
         <div class="bg-white p-8 card-hover flex flex-col h-full reveal-on-scroll">
           
@@ -30,20 +30,20 @@
 
 <!-- Roadmap Section -->
 <section class="w-full py-pad bg-white">
-  <div class="w-full max-w-[1180px] mx-auto px-6">
+  <div class="w-full max-w-295 mx-auto px-6">
     <div class="text-center mb-20 reveal-on-scroll">
       <h2 class="text-navy">Seamless Implementation Roadmap</h2>
     </div>
 
     <div class="relative pt-2 reveal-on-scroll">
       <!-- Connecting Line -->
-      <div class="hidden md:block absolute top-[68px] left-0 right-0 w-full h-[3px] bg-line z-0"></div>
+      <div class="hidden md:block absolute top-17 left-0 right-0 w-full h-0.75 bg-line z-0"></div>
 
       <div class="flex flex-col md:flex-row justify-between relative z-10 gap-12 md:gap-4">
         @for (step of roadmapSteps; track step.number) {
           <div class="flex flex-col items-center text-center w-full md:w-1/5">
             <!-- Number Box -->
-            <div class="w-14 h-14 rounded-[12px] flex items-center justify-center text-xl font-bold mb-6 transition-all duration-300"
+            <div class="w-14 h-14 rounded-xl flex items-center justify-center text-xl font-bold mb-6 transition-all duration-300"
                  [ngClass]="step.active ? 'bg-gold text-navy shadow-lg scale-110' : 'bg-white text-navy border border-line shadow-sm'">
               {{ step.number }}
             </div>
