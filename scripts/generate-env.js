@@ -1,33 +1,34 @@
 const fs = require('fs');
 const path = require('path');
 
-// Target directory path relative to this script file
 const envFolder = path.join(__dirname, '../src/environments');
 
-// Map Vercel environment variables. They fallback to empty strings locally.
+// 🔍 LOGGER: Check what keys Vercel is actually passing to the Node compiler
+console.log('=== VERCEL ENVIRONMENT VARIABLE CHECK ===');
+console.log('Is PUBLIC_KEY defined in Vercel?:', process.env.PUBLIC_KEY ? '✅ YES' : '❌ NO (Check Vercel Dashboard Settings)');
+console.log('Is SERVICE_ID defined in Vercel?:', process.env.SERVICE_ID ? '✅ YES' : '❌ NO');
+console.log('Is TEMPLATE_ID defined in Vercel?:', process.env.TEMPLATE_ID ? '✅ YES' : '❌ NO');
+console.log('==========================================');
+
 const commonFields = `
   publicKey: '${process.env.PUBLIC_KEY || ""}',
   serviceId: '${process.env.SERVICE_ID || ""}',
   templateId: '${process.env.TEMPLATE_ID || ""}',
 `;
 
-// Define development file structure (production: false)
 const devEnvContent = `export const environment = {
   production: false,${commonFields}};
 `;
 
-// Define production file structure (production: true)
 const prodEnvContent = `export const environment = {
   production: true,${commonFields}};
 `;
 
-// Create the environments directory if it does not exist
 if (!fs.existsSync(envFolder)) {
   fs.mkdirSync(envFolder, { recursive: true });
 }
 
-// Generate both files simultaneously
 fs.writeFileSync(path.join(envFolder, 'environment.ts'), devEnvContent);
 fs.writeFileSync(path.join(envFolder, 'environment.prod.ts'), prodEnvContent);
 
-console.log('Angular environment files generated successfully!');
+console.log('Angular environments generated successfully!');
