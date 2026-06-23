@@ -1,5 +1,6 @@
-const fs = require('fs');
-const path = require('path');
+require('dotenv').config();
+const fs = require('node:fs');
+const path = require('node:path');
 
 const envFolder = path.join(__dirname, '../src/environments');
 
