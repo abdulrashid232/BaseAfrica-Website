@@ -57,7 +57,7 @@
           @if (featuredProject.videos && featuredProject.videos.length > 0) {
             <div class="mt-6 pt-6 border-t border-line">
               <p class="text-sm font-semibold text-navy mb-3">Video Gallery</p>
-              <div class="grid grid-cols-1 gap-3">
+              <div class="grid grid-cols-2 gap-3 md:gap-4 lg:gap-6">
                 @for (video of featuredProject.videos; track video.src) {
                   <div class="relative rounded-lg overflow-hidden group card-hover bg-navy/5">
                     <video class="w-full aspect-16/9 object-cover bg-navy/10" controls>
@@ -98,9 +98,9 @@
       </div>
 
       <!-- What We Did + What Changed (side by side) -->
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 reveal-on-scroll">
+      <div class="grid grid-cols-1 gap-6 reveal-on-scroll">
         <!-- What We Did -->
-        <div class="bg-mist border border-line p-8 md:p-10 rounded-lg">
+        <div class="bg-mist border border-line p-8 md:p-12 rounded-lg w-full">
           <h3 class="text-xl font-bold text-navy mb-6 flex items-center gap-2">
             <lucide-angular [img]="icons.Building2" class="w-5 h-5 text-gold"></lucide-angular>
             What We Did
@@ -115,11 +115,11 @@
           </ul>
         </div>
 
-        <!-- What Changed -->
-        <div class="bg-navy-pattern text-white p-8 md:p-10 rounded-lg">
+        <!-- Operational Wins -->
+        <div class="bg-navy-pattern text-white p-8 md:p-10 rounded-lg w-full">
           <h3 class="text-xl font-bold mb-6 flex items-center gap-2">
             <lucide-angular [img]="icons.Users" class="w-5 h-5 text-gold"></lucide-angular>
-            What Changed for Them
+            Operational Wins
           </h3>
           <ul class="space-y-3">
             @for (item of featuredProject.whatChanged; track item) {
