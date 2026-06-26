@@ -20,7 +20,7 @@
   <div class="w-full max-w-295 mx-auto px-6">
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
 
-      <div class="reveal-on-scroll">
+      <div class="bg-mist border border-line p-8 md:p-10 rounded-lg reveal-on-scroll">
         <h3 class="kicker mb-4">Our Mission</h3>
         <h2 class="text-navy mb-6">Bridging the Gap Between In-House and Outsourcing</h2>
         <div class="text-ink space-y-4 leading-relaxed">
@@ -88,7 +88,7 @@
           <!-- Headshot placeholder -->
           <div class="w-full aspect-square bg-mist border border-line mb-6 rounded-lg overflow-hidden relative flex items-center justify-center card-hover">
             @if (member.image) {
-              <img [src]="member.image" [alt]="member.name" class="w-full h-full object-cover">
+              <img [src]="member.image" [alt]="member.name" loading="lazy" class="w-full h-full object-cover">
             } @else {
               <!-- Placeholder with initials -->
               <div class="text-navy/20 text-6xl font-extrabold select-none">{{ member.name.split(' ').map(n => n[0]).join('').slice(0, 2) }}</div>

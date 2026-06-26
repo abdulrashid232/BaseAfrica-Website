@@ -51,6 +51,14 @@ interface Project {
   featured?: boolean;
 }
 
+interface Testimonial {
+  name: string;
+  title: string;
+  company?: string;
+  quote: string;
+  initials: string;
+}
+
 @Component({
   selector: 'app-projects',
   imports: [Header, Footer, RouterLink, LucideAngularModule, CountUp, ScrollReveal],
@@ -208,4 +216,33 @@ export class Projects {
 
     return 'tickets/day';
   }
+
+  // ─── Testimonials Data ───
+  testimonials: Testimonial[] = [
+    {
+      name: 'Tzvi B.',
+      title: 'Operations Lead',
+      company: 'US ticket brokerage',
+      quote: 'We handed them a function, not a checklist, and they ran with it. Three branches stood up in Ghana, a team trained to our exact standards, and an operation we never have to babysit. Two years in, we have renewed every single time.',
+      initials: 'TB'
+    },
+    {
+      name: 'Rafael L.',
+      title: 'Head of Customer Operations',
+      quote: 'The 24-hour cover changed how we work. Day shifts, nights, weekends — the queue keeps moving while our head office sleeps, and we wake up to the work already done. That alone paid for the whole arrangement.',
+      initials: 'RL'
+    },
+    {
+      name: 'Dovi M.',
+      title: 'Director of Finance',
+      quote: 'What sold me was the accountability. There is one operations manager who owns the numbers, supervisors on the floor every shift, and a report in my inbox I can actually trust. It feels like our own team, not a vendor.',
+      initials: 'DM'
+    },
+    {
+      name: 'Gabriel H.',
+      title: 'VP of Growth',
+      quote: 'We started with one branch and a small team, and scaled past a hundred people without rebuilding anything. They added capacity as our volume grew — no scramble, no drop in quality. Scaling finally stopped being the scary part.',
+      initials: 'GH'
+    }
+  ];
 }
