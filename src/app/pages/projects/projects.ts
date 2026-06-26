@@ -178,4 +178,17 @@ export class Projects {
   get regularProjects(): Project[] {
     return this.projects.filter(p => !p.featured);
   }
+
+  // ─── Helper methods for "What Changed" section ───
+  extractLeadPhrase(text: string): string {
+    // Extracts the first few words (up to the first dash or verb phrase)
+    const match = text.match(/^([^—–]+?(?:\s+\w+)*?)(?:\s+(?:running|freed|lower|grew|across))/);
+    return match ? match[1] + (match[2] ? ' ' + match[2].split(' ')[0] : '') : text.split(' ').slice(0, 2).join(' ');
+  }
+
+  extractRest(text: string): string {
+    // Extracts the remainder after the lead phrase
+    const leadPhrase = this.extractLeadPhrase(text);
+    return text.substring(leadPhrase.length).trim();
+  }
 }
