@@ -257,7 +257,7 @@
             </div>
             <div>
               <div class="text-white font-semibold" style="color: #ffffff;">{{ testimonial.name }}</div>
-              <div class="text-ink-light text-sm" style="color: #C3CEDD;">{{ testimonial.title }}@if (testimonial.company) { <span>, {{ testimonial.company }}</span>}</div>
+              <div class="text-ink-light text-sm" style="color: #C3CEDD;">@if (testimonial.company) { <span>, {{ testimonial.company }}</span>}</div>
             </div>
           </div>
         </div>
