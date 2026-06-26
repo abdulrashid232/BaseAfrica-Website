@@ -129,18 +129,17 @@
               @for (card of featuredProject.wins.large; track card.title) {
                 @if (card.type === 'comparison') {
                   <div class="bg-white border border-stone-200 rounded-sm p-6" style="box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                    <div class="text-xs font-bold text-stone-500 uppercase tracking-wide mb-5" style="letter-spacing: 0.1em;">{{ card.title }}</div>
+                    <div class="text-xs font-bold text-navy uppercase tracking-wide mb-5" style="letter-spacing: 0.1em; color: #0D2B4E;">{{ card.title }}</div>
                     <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 mb-5">
                       <div class="min-w-0">
                         <div class="text-xs text-stone-500 uppercase font-medium mb-2">Before</div>
                         <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-stone-400 wrap-break-word" style="color: #9AA6B5;">{{ getMetricValue(card.before) }}</div>
                         <div class="text-[10px] uppercase tracking-wide text-stone-400 mt-1" style="color: #9AA6B5;">{{ getMetricUnit(card.before) }}</div>
                       </div>
-                      <div class="text-2xl text-gold shrink-0 mt-1 sm:mt-0" style="color: #C8960C;">»</div>
+                      <div class="text-4xl font-black text-gold shrink-0 mt-1 sm:mt-0" style="color: #C8960C;">»</div>
                       <div class="min-w-0">
-                        <div class="text-xs text-stone-500 uppercase font-medium mb-2">Now</div>
+                        <div class="text-xs text-gold uppercase font-bold mb-2" style="color: #C8960C;">Now</div>
                         <div class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-navy wrap-break-word">{{ getMetricValue(card.after) }}</div>
-                        <div class="text-[10px] uppercase tracking-wide text-stone-400 mt-1" style="color: #9AA6B5;">{{ getMetricUnit(card.after) }}</div>
                       </div>
                     </div>
                     @if (card.description) {
@@ -151,7 +150,7 @@
                   </div>
                 } @else {
                   <div class="bg-navy rounded-sm p-6" style="background-image: radial-gradient(circle at 20% 50%, rgba(200,150,12,0.1) 1px, transparent 1px), radial-gradient(circle at 60% 30%, rgba(200,150,12,0.05) 1px, transparent 1px); background-size: 50px 50px; border: 1px solid rgba(200,150,12,0.2);">
-                    <div class="text-xs font-bold text-gold uppercase tracking-wide mb-5" style="letter-spacing: 0.1em; color: #C8CEDD;">{{ card.title }}</div>
+                    <div class="text-xs font-bold text-gold uppercase tracking-wide mb-5" style="letter-spacing: 0.1em; color: #C8960C;">{{ card.title }}</div>
                     @if (card.metrics && card.metrics.length > 0) {
                       <div class="grid grid-cols-2 gap-6 mb-5">
                         @for (m of card.metrics; track m.label) {
@@ -175,9 +174,9 @@
             <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mb-6">
               @for (stat of featuredProject.wins.small; track stat.title) {
                 <div class="bg-white border border-stone-200 rounded-sm p-6" style="box-shadow: 0 1px 3px rgba(0,0,0,0.05);">
-                  <div class="text-2xl md:text-3xl font-extrabold text-navy mb-2">{{ stat.title }}</div>
+                  <div class="text-2xl md:text-3xl font-extrabold text-gold mb-2" style="color: #C8960C;">{{ stat.title }}</div>
                   @if (stat.subtitle) {
-                    <div class="text-xs md:text-sm text-stone-600 font-medium mb-3 uppercase" style="color: #5B6675;">{{ stat.subtitle }}</div>
+                    <div class="text-xs md:text-sm text-navy font-bold mb-3 uppercase" style="color: #0D2B4E;">{{ stat.subtitle }}</div>
                   }
                   @if (stat.description) {
                     <p class="text-sm text-stone-600 leading-relaxed" style="color: #5B6675;">{{ stat.description }}</p>
@@ -190,7 +189,7 @@
 
         <!-- Operational Wins -->
         <div class="bg-white border border-stone-200 rounded-sm p-8 md:p-9 reveal-on-scroll">
-          <div class="text-xs font-bold text-stone-700 uppercase tracking-wide mb-6" style="letter-spacing: 0.1em;">Operational Wins</div>
+          <div class="text-xs font-bold text-navy uppercase tracking-wide mb-6" style="letter-spacing: 0.1em; color: #0D2B4E;">Operational Wins</div>
           <div class="grid grid-cols-1 md:grid-cols-2 gap-y-5 gap-x-10">
             @for (item of featuredProject.whatChanged; track item) {
               <div class="flex gap-4">

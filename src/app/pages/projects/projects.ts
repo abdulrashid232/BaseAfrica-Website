@@ -134,8 +134,8 @@ export class Projects {
           {
             type: 'comparison',
             title: 'Daily Ticket Volume',
-            before: '40 tickets / day',
-            after: '500–1,000 tickets / day',
+            before: "40–50 tickets/day",
+            after: "500–1,000 tickets/day",
             description: 'Covering both parking and main event tickets, across day and night shifts.'
           },
           {
@@ -190,7 +190,7 @@ export class Projects {
     return text.substring(leadPhrase.length).trim();
   }
 
-  getMetricValue(value?: string): string {
+  getMetricValue(value?: string){
     if (!value) {
       return '';
     }
