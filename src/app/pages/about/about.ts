@@ -44,7 +44,7 @@ export class About {
       name: 'Kelvin Nana Boateng',
       role: 'Managing Director',
       bio: 'Leads overall strategy and client partnerships. Built and scaled the US ticket brokerage operation from a single branch to three locations with 150+ staff.',
-      image: '' // Headshot to be supplied
+      image: '../assets/Kelvin.jpg' // Headshot to be supplied
     },
     {
       name: 'Fred Bonney',
