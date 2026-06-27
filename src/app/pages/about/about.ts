@@ -56,7 +56,7 @@ export class About {
       name: 'Kofi Safo',
       role: 'Director of Operations',
       bio: 'Runs day-to-day operations across all branches, infrastructure, compliance, facility management, and operational KPIs.',
-      image: ''
+      image: '../assets/kofi-safo.png'
     },
     {
       name: 'Tina Presley',
