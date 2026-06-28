@@ -1,0 +1,43 @@
+/* Improve text visibility for navy-pattern sections */
+.bg-navy-pattern {
+	position: relative;
+}
+
+.bg-navy-pattern::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background: rgba(0,0,0,0.22);
+	z-index: 0;
+	pointer-events: none;
+}
+
+.bg-navy-pattern > div {
+	position: relative;
+	z-index: 1;
+}
+
+.bg-navy-pattern .kicker,
+.bg-navy-pattern h2,
+.bg-navy-pattern .text-white,
+.bg-navy-pattern p,
+.bg-navy-pattern .text-lead,
+.bg-navy-pattern .text-ink-light {
+	color: #ffffff !important;
+	text-shadow: 0 2px 8px rgba(0,0,0,0.6);
+}
+
+.bg-navy-pattern h2 {
+	font-weight: 700;
+	line-height: 1.05;
+}
+
+.bg-navy-pattern p {
+	color: rgba(255,255,255,0.94) !important;
+}
+
+.bg-navy-pattern .btn-primary {
+	/* keep buttons readable on the pattern */
+	z-index: 2;
+}
+
