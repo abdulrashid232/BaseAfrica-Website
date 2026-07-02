@@ -1,4 +1,5 @@
-import { Directive, ElementRef, OnInit, OnDestroy, Input } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Directive, ElementRef, OnInit, OnDestroy, Input, inject, PLATFORM_ID } from '@angular/core';
 
 @Directive({
   selector: '.reveal-on-scroll, [reveal-on-scroll], [appScrollReveal]',
@@ -8,10 +9,16 @@ export class ScrollReveal implements OnInit, OnDestroy {
   @Input() revealIndex = 0;
   private observer!: IntersectionObserver;
   private reducedMotion = false;
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private el: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
+    // 1. Guard for Server-Side Rendering
+    if (!this.isBrowser) {
+      return;
+    }
+
     this.reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     const host = this.el.nativeElement;
     
@@ -25,6 +32,7 @@ export class ScrollReveal implements OnInit, OnDestroy {
       host.style.transitionDelay = `${delay}s`;
     }
 
+    // This safely executes only in the browser now
     this.observer = new IntersectionObserver((entries) => {
       for (const entry of entries) {
         if (entry.isIntersecting) {
@@ -37,5 +45,10 @@ export class ScrollReveal implements OnInit, OnDestroy {
     this.observer.observe(host);
   }
 
-  ngOnDestroy(): void { this.observer?.disconnect(); }
+  ngOnDestroy(): void { 
+    // 2. Prevent server-side disconnect attempts
+    if (this.observer) {
+      this.observer.disconnect(); 
+    }
+  }
 }

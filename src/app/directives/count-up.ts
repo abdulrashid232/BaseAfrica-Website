@@ -1,4 +1,5 @@
-import { Directive, ElementRef, Input, OnInit, OnDestroy } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
+import { Directive, ElementRef, Input, OnInit, OnDestroy, inject, PLATFORM_ID } from '@angular/core';
 
 /**
  * Animates a number counting up from 0 to the target value when the element
@@ -18,12 +19,20 @@ export class CountUp implements OnInit, OnDestroy {
   private observer!: IntersectionObserver;
   private animationId: number | null = null;
   private hasAnimated = false;
+  
+  // Inject platform token to detect SSR vs Browser environment
+  private isBrowser = isPlatformBrowser(inject(PLATFORM_ID));
 
   constructor(private el: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
     // Show "0" (or the non-numeric format) initially
     this.el.nativeElement.textContent = this.formatValue(0);
+
+    // 1. Guard for Server-Side Rendering
+    if (!this.isBrowser) {
+      return;
+    }
 
     this.observer = new IntersectionObserver(
       (entries) => {
@@ -41,8 +50,11 @@ export class CountUp implements OnInit, OnDestroy {
   }
 
   ngOnDestroy(): void {
-    this.observer?.disconnect();
-    if (this.animationId !== null) {
+    // 2. Safe cleanup only if they were initialized in the browser
+    if (this.observer) {
+      this.observer.disconnect();
+    }
+    if (this.animationId !== null && this.isBrowser) {
       cancelAnimationFrame(this.animationId);
     }
   }
@@ -52,12 +64,10 @@ export class CountUp implements OnInit, OnDestroy {
   private get parsed(): { numeric: number; suffix: string; format: 'number' | 'fraction' } {
     const raw = this.appCountUp.trim();
 
-    // Fraction format e.g. "24/7" – not countable, show statically
     if (/^\d+\/\d+$/.test(raw)) {
       return { numeric: 0, suffix: '', format: 'fraction' };
     }
 
-    // Extract leading number + trailing suffix
     const match = raw.match(/^(\d+)(.*)$/);
     if (match) {
       return { numeric: parseInt(match[1], 10), suffix: match[2], format: 'number' };
@@ -81,7 +91,6 @@ export class CountUp implements OnInit, OnDestroy {
   private animate(): void {
     const { numeric, format } = this.parsed;
 
-    // Non-countable formats: just set immediately
     if (format === 'fraction' || numeric === 0) {
       this.el.nativeElement.textContent = this.appCountUp.trim();
       return;
@@ -94,7 +103,6 @@ export class CountUp implements OnInit, OnDestroy {
     const step = (now: number) => {
       const elapsed = now - startTime;
       const progress = Math.min(elapsed / duration, 1);
-      // Ease-out cubic for a satisfying deceleration
       const eased = 1 - Math.pow(1 - progress, 3);
       const current = Math.round(eased * target);
 

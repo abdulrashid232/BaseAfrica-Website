@@ -1,6 +1,7 @@
 import { Component, signal, inject, OnInit, OnDestroy } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { Subscription } from 'rxjs';
+import { SeoRouterService } from './services/seo';
 
 @Component({
   selector: 'app-root',
@@ -12,6 +13,7 @@ export class App implements OnInit, OnDestroy {
   protected readonly title = signal('OpenBaseAfrica');
   private router = inject(Router);
   private sub!: Subscription;
+  private seoRouterService = inject(SeoRouterService);
 
   /** True while a route transition is in progress */
   loading = signal(false);
@@ -25,6 +27,8 @@ export class App implements OnInit, OnDestroy {
         setTimeout(() => this.loading.set(false), 150);
       }
     });
+
+    this.seoRouterService.initAutomaticSeo();
   }
 
   ngOnDestroy(): void {

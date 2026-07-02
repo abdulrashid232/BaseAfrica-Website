@@ -1,0 +1,58 @@
+
+<main class="w-full bg-navy-pattern text-white min-h-[85vh] flex items-center justify-center py-20 px-6 relative overflow-hidden">
+  <!-- Dynamic blurred background elements for premium visual depth -->
+  <div class="absolute top-1/4 left-1/4 w-96 h-96 bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+  <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-navy/30 rounded-full blur-[150px] pointer-events-none"></div>
+
+  <!-- Premium glassmorphism container card -->
+  <div class="relative z-10 w-full max-w-xl bg-white/5 backdrop-blur-md border border-white/10 rounded-[20px] p-8 md:p-14 text-center shadow-2xl hover:border-gold/30 transition-all duration-500">
+    
+    <!-- kicker text using 'Cinzel' via global or utility styling -->
+    <span class="kicker block mb-4 tracking-[0.25em] text-xs font-semibold">Error 404 &bull; Page Lost</span>
+
+    <!-- Big display 404 with light glow -->
+    <div class="text-8xl md:text-9xl font-black text-gold mb-6 select-none leading-none tracking-widest font-serif drop-shadow-[0_8px_24px_rgba(200,150,12,0.15)] animate-pulse">
+      404
+    </div>
+
+    <!-- Gold Accent Divider -->
+    <div class="w-16 h-1 bg-gold mx-auto mb-8 rounded-full"></div>
+
+    <!-- Primary Title -->
+    <h1 class="text-3xl md:text-4xl font-extrabold text-white mb-4 tracking-tight leading-tight">
+      Operation Out of Bounds
+    </h1>
+
+    <!-- Description -->
+    <p class="text-ink-light text-base md:text-lg mb-10 max-w-md mx-auto leading-relaxed">
+      The resource or page you are looking for has been relocated, retired, or never existed. Let us guide you back to our active hubs.
+    </p>
+
+    <!-- Action Buttons -->
+    <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+      <a routerLink="/" id="404-btn-home" class="btn-primary flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3 text-sm tracking-wide">
+        <lucide-angular [img]="icons.Home" class="w-4 h-4"></lucide-angular>
+        Return Home
+      </a>
+      
+      <a routerLink="/contact" id="404-btn-contact" class="flex items-center justify-center gap-2.5 w-full sm:w-auto px-7 py-3 text-sm font-bold text-white bg-white/5 hover:bg-white/10 border border-white/20 hover:border-gold rounded-[5px] transition-all duration-300 tracking-wide">
+        <lucide-angular [img]="icons.Mail" class="w-4 h-4"></lucide-angular>
+        Get in Touch
+      </a>
+    </div>
+
+    <!-- Helpful Links Footer inside Card -->
+    <div class="mt-12 pt-8 border-t border-white/10 text-center">
+      <span class="text-xs text-ink-light font-medium uppercase tracking-[0.15em] block mb-4">Or explore other sectors</span>
+      <div class="flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-semibold">
+        <a routerLink="/services" class="text-gold hover:text-white transition-colors duration-200">Our Services</a>
+        <span class="text-white/20">&bull;</span>
+        <a routerLink="/projects" class="text-gold hover:text-white transition-colors duration-200">Case Studies</a>
+        <span class="text-white/20">&bull;</span>
+        <a routerLink="/about" class="text-gold hover:text-white transition-colors duration-200">About Us</a>
+      </div>
+    </div>
+
+  </div>
+</main>
+
