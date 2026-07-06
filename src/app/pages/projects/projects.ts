@@ -1,5 +1,4 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
 import { Header } from '../../core/header/header';
 import { Footer } from '../../core/footer/footer';
 import { LucideAngularModule, X, ChevronLeft, ChevronRight, MapPin, Users, Building2, Clock, Check } from 'lucide-angular';
@@ -62,7 +61,7 @@ interface Testimonial {
 
 @Component({
   selector: 'app-projects',
-  imports: [Header, Footer, RouterLink, LucideAngularModule, CountUp, ScrollReveal],
+  imports: [Header, Footer,  LucideAngularModule, CountUp, ScrollReveal],
   templateUrl: './projects.html',
   styleUrl: './projects.css',
 })
@@ -126,9 +125,6 @@ export class Projects {
         { value: '24/7', label: 'Operation' }
       ],
       images: [
-        { src: 'assets/Boatpoint/1.jpg', alt: 'Main operations floor' },
-        { src: 'assets/Boatpoint/2.jpg', alt: 'Training and meeting room' },
-        { src: 'assets/Boatpoint/3.jpg', alt: 'Staff lounge and break area' },
         { src: 'assets/Boatpoint/4.jpg', alt: 'Performance dashboards' },
         { src: 'assets/Boatpoint/5.jpg', alt: 'Operations team at work' },
         { src: 'assets/Boatpoint/6.jpg', alt: 'Operations team at work' },
