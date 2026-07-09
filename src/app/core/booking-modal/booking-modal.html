@@ -1,0 +1,440 @@
+@if (isOpen()) {
+  <div class="booking-modal-backdrop" (click)="close()">
+    <div class="booking-modal-wrap" (click)="$event.stopPropagation()">
+      <div class="booking-modal-card">
+        
+        <!-- Close Button -->
+        <button class="booking-modal-close-btn" (click)="close()" aria-label="Close modal">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="booking-modal-close-icon">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+
+        <!-- Calendly Ribbon -->
+        <div class="booking-modal-ribbon">
+          <span>Powered by<br><strong>Calendly</strong></span>
+        </div>
+
+        <!-- Brand Section -->
+        <div class="booking-modal-brand">
+          <div class="booking-modal-brand-circle"></div>
+          <div class="booking-modal-brand-name">OPEN BASE</div>
+          <div class="booking-modal-brand-sub">— AFRICA —</div>
+        </div>
+
+        <!-- Header -->
+        <h1 class="booking-modal-title">Book a Meeting</h1>
+        <p class="booking-modal-subtitle">with <strong>Open Base Africa</strong></p>
+        <div class="booking-modal-divider"></div>
+        <p class="booking-modal-instructions">Choose a convenient time below.<br>Meetings take approximately 30 minutes.</p>
+
+        <!-- Content Area -->
+        <div class="booking-modal-content">
+          
+          <!-- Left Panel: Event Details -->
+          <div class="booking-modal-left-panel">
+            
+            <!-- Back Button (shown when not on step 0) -->
+            @if (currentStep() > 0) {
+              <button class="booking-modal-back-btn" (click)="goToStep(currentStep() - 1)">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="booking-modal-back-icon">
+                  <line x1="19" y1="12" x2="5" y2="12"></line>
+                  <polyline points="12 19 5 12 12 5"></polyline>
+                </svg>
+                <span>Back</span>
+              </button>
+            }
+
+            <div class="booking-modal-event-header">
+              <div class="booking-modal-dot"></div>
+              <div class="booking-modal-event-title-group">
+                <div class="booking-modal-event-title">
+                  <h2>30-Minute Consultation</h2>
+                  @if (currentStep() === 0) {
+                    <span class="booking-modal-chevron" (click)="goToStep(1)">&rsaquo;</span>
+                  }
+                </div>
+                <p class="booking-modal-event-desc">Discuss partnerships, projects, or general enquiries.</p>
+              </div>
+            </div>
+
+            <!-- Event Details List -->
+            <ul class="booking-modal-event-details">
+              @if (currentStep() < 2) {
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="9"/>
+                      <path d="M12 7v5l3 3"/>
+                    </svg>
+                  </span>
+                  30 minutes
+                </li>
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="6" width="14" height="12" rx="2"/>
+                      <path d="M16 10l6-3v10l-6-3"/>
+                    </svg>
+                  </span>
+                  Google Meet
+                </li>
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4z"/>
+                    </svg>
+                  </span>
+                  Free
+                </li>
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="17" rx="2"/>
+                      <path d="M3 9h18M8 2v4M16 2v4"/>
+                    </svg>
+                  </span>
+                  Mon &ndash; Fri
+                </li>
+              } @else {
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <circle cx="12" cy="12" r="9"/>
+                      <path d="M12 7v5l3 3"/>
+                    </svg>
+                  </span>
+                  30 minutes
+                </li>
+                <li class="booking-modal-selected-time">
+                  <span class="booking-modal-detail-icon booking-modal-detail-icon-gold">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="3" y="4" width="18" height="17" rx="2"/>
+                      <path d="M3 9h18M8 2v4M16 2v4"/>
+                    </svg>
+                  </span>
+                  {{ selectedTimeSlot }}, {{ selectedFullDateString() }}
+                </li>
+                <li>
+                  <span class="booking-modal-detail-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                      <rect x="2" y="6" width="14" height="12" rx="2"/>
+                      <path d="M16 10l6-3v10l-6-3"/>
+                    </svg>
+                  </span>
+                  Google Meet video call
+                </li>
+              }
+            </ul>
+
+            <div class="booking-modal-gold-bar"></div>
+          </div>
+
+          <!-- Right Panel: Dynamic Content -->
+          @if (currentStep() === 0) {
+            <!-- Step 0: Illustration -->
+            <div class="booking-modal-illustration" (click)="goToStep(1)">
+              <svg viewBox="0 0 400 340" xmlns="http://www.w3.org/2000/svg">
+                <!-- Background blob -->
+                <ellipse cx="230" cy="170" rx="170" ry="150" fill="#F6ECDF"/>
+                <!-- Calendar -->
+                <rect x="120" y="90" width="150" height="150" rx="6" fill="#ffffff" stroke="#e3e6ea" stroke-width="1"/>
+                <rect x="120" y="90" width="150" height="40" rx="6" fill="#0D2B4E"/>
+                <rect x="120" y="118" width="150" height="12" fill="#0D2B4E"/>
+                <circle cx="145" cy="90" r="8" fill="none" stroke="#0D2B4E" stroke-width="4"/>
+                <circle cx="175" cy="90" r="8" fill="none" stroke="#0D2B4E" stroke-width="4"/>
+                <circle cx="215" cy="90" r="8" fill="none" stroke="#0D2B4E" stroke-width="4"/>
+                <circle cx="245" cy="90" r="8" fill="none" stroke="#0D2B4E" stroke-width="4"/>
+                <g fill="#e9edf1">
+                  <rect x="132" y="142" width="24" height="20" rx="3"/>
+                  <rect x="164" y="142" width="24" height="20" rx="3"/>
+                  <rect x="196" y="142" width="24" height="20" rx="3"/>
+                  <rect x="228" y="142" width="24" height="20" rx="3"/>
+                  <rect x="132" y="172" width="24" height="20" rx="3"/>
+                  <rect x="196" y="172" width="24" height="20" rx="3"/>
+                  <rect x="228" y="172" width="24" height="20" rx="3"/>
+                  <rect x="132" y="202" width="24" height="20" rx="3"/>
+                  <rect x="164" y="202" width="24" height="20" rx="3"/>
+                  <rect x="228" y="202" width="24" height="20" rx="3"/>
+                </g>
+                <rect x="164" y="172" width="24" height="20" rx="3" fill="#C8960C"/>
+                <path d="M170 182l4 4 8-8" stroke="#ffffff" stroke-width="2.5" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+                <!-- Plant -->
+                <path d="M90 230c-6-20-2-38 8-46" stroke="#0D2B4E" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M95 226c2-22 14-36 26-40" stroke="#0D2B4E" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <path d="M100 224c8-18 22-28 34-28" stroke="#0D2B4E" stroke-width="6" fill="none" stroke-linecap="round"/>
+                <rect x="78" y="238" width="40" height="34" rx="4" fill="#d7dde5"/>
+                <rect x="82" y="234" width="32" height="10" rx="3" fill="#c3ccd6"/>
+                <!-- Clock -->
+                <circle cx="300" cy="245" r="48" fill="#ffffff" stroke="#C8960C" stroke-width="7"/>
+                <circle cx="300" cy="245" r="3" fill="#0D2B4E"/>
+                <line x1="300" y1="245" x2="300" y2="218" stroke="#0D2B4E" stroke-width="4" stroke-linecap="round"/>
+                <line x1="300" y1="245" x2="320" y2="245" stroke="#0D2B4E" stroke-width="4" stroke-linecap="round"/>
+                <g stroke="#C8960C" stroke-width="2">
+                  <line x1="300" y1="201" x2="300" y2="207"/>
+                  <line x1="300" y1="283" x2="300" y2="289"/>
+                  <line x1="256" y1="245" x2="262" y2="245"/>
+                  <line x1="338" y1="245" x2="344" y2="245"/>
+                </g>
+                <!-- Sparkles -->
+                <path d="M330 60l3 8 8 3-8 3-3 8-3-8-8-3 8-3z" fill="#C8960C"/>
+                <path d="M100 130l2 6 6 2-6 2-2 6-2-6-6-2 6-2z" fill="#0D2B4E"/>
+                <circle cx="95" cy="70" r="3" fill="#0D2B4E" opacity="0.5"/>
+                <circle cx="345" cy="150" r="3" fill="#0D2B4E" opacity="0.4"/>
+                <path d="M340 200l2 5 5 2-5 2-2 5-2-5-5-2 5-2z" fill="#0D2B4E" opacity="0.6"/>
+              </svg>
+            </div>
+          }
+
+          @if (currentStep() === 1) {
+            <!-- Step 1: Date & Time Picker -->
+            <div class="booking-modal-picker-container" [class.has-selected-date]="selectedDate">
+              
+              <!-- Calendar View -->
+              <div class="booking-modal-calendar-view">
+                <div class="booking-modal-calendar-header">
+                  <button class="booking-modal-calendar-nav-btn" (click)="prevMonth()" [disabled]="isCurrentMonth()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="booking-modal-nav-icon">
+                      <polyline points="15 18 9 12 15 6"></polyline>
+                    </svg>
+                  </button>
+                  <span class="booking-modal-calendar-month-name">{{ monthName() }} {{ currentYear }}</span>
+                  <button class="booking-modal-calendar-nav-btn" (click)="nextMonth()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="booking-modal-nav-icon">
+                      <polyline points="9 18 15 12 9 6"></polyline>
+                    </svg>
+                  </button>
+                </div>
+
+                <div class="booking-modal-calendar-weekdays">
+                  <span>SUN</span>
+                  <span>MON</span>
+                  <span>TUE</span>
+                  <span>WED</span>
+                  <span>THU</span>
+                  <span>FRI</span>
+                  <span>SAT</span>
+                </div>
+
+                <div class="booking-modal-calendar-days">
+                  @for (blank of blankDays(); track $index) {
+                    <div class="booking-modal-calendar-day blank"></div>
+                  }
+                  @for (day of calendarDays(); track day.date.getTime()) {
+                    <button 
+                      class="booking-modal-calendar-day"
+                      [class.active]="day.isActive"
+                      [class.selected]="isSelectedDate(day.date)"
+                      [class.today]="day.isToday"
+                      [disabled]="!day.isActive"
+                      (click)="selectDate(day.date)">
+                      {{ day.date.getDate() }}
+                      @if (day.isToday) {
+                        <span class="booking-modal-today-dot"></span>
+                      }
+                    </button>
+                  }
+                </div>
+              </div>
+
+              <!-- Time Slots -->
+              @if (selectedDate) {
+                <div class="booking-modal-time-slots">
+                  <h4 class="booking-modal-time-slots-header">
+                    {{ selectedDateString() }}
+                  </h4>
+                  <div class="booking-modal-time-slots-list">
+                    @for (slot of availableTimeSlots; track slot) {
+                      <div class="booking-modal-time-slot-item">
+                        <button 
+                          class="booking-modal-time-btn"
+                          [class.active]="selectedTimeSlot === slot"
+                          (click)="selectTimeSlot(slot)">
+                          {{ slot }}
+                        </button>
+                        @if (selectedTimeSlot === slot) {
+                          <button 
+                            class="booking-modal-confirm-btn"
+                            (click)="goToStep(2)">
+                            Next
+                          </button>
+                        }
+                      </div>
+                    }
+                  </div>
+                </div>
+              }
+            </div>
+          }
+
+          @if (currentStep() === 2) {
+            <!-- Step 2: Booking Form -->
+            <div class="booking-modal-form-view">
+              <h3 class="booking-modal-form-title">Enter Details</h3>
+              <form [formGroup]="bookingForm" (ngSubmit)="submitBooking()">
+                
+                <div class="booking-modal-form-group">
+                  <label for="booking-name">Name *</label>
+                  <input 
+                    type="text" 
+                    id="booking-name" 
+                    formControlName="name" 
+                    placeholder="Jane Doe"
+                    required>
+                  @if (bookingForm.get('name')?.invalid && bookingForm.get('name')?.touched) {
+                    <span class="booking-modal-form-error">Name is required</span>
+                  }
+                </div>
+
+                <div class="booking-modal-form-group">
+                  <label for="booking-email">Email Address *</label>
+                  <input 
+                    type="email" 
+                    id="booking-email" 
+                    formControlName="email" 
+                    placeholder="jane@example.com"
+                    required>
+                  @if (bookingForm.get('email')?.invalid && bookingForm.get('email')?.touched) {
+                    <span class="booking-modal-form-error">Please enter a valid email address</span>
+                  }
+                </div>
+
+                @if (!showGuestsInput) {
+                  <button 
+                    type="button" 
+                    class="booking-modal-add-guests-btn"
+                    (click)="showGuestsInput = true">
+                    Add Guests
+                  </button>
+                } @else {
+                  <div class="booking-modal-form-group">
+                    <label for="booking-guests">Guest Email(s) <span class="booking-modal-form-label-small">(comma separated)</span></label>
+                    <input 
+                      type="text" 
+                      id="booking-guests" 
+                      formControlName="guests" 
+                      placeholder="guest1@example.com, guest2@example.com">
+                  </div>
+                }
+
+                <div class="booking-modal-form-group">
+                  <label for="booking-notes">Please share anything that will help prepare for our meeting.</label>
+                  <textarea 
+                    id="booking-notes" 
+                    formControlName="notes" 
+                    rows="3" 
+                    placeholder="Optional details or specific topics..."></textarea>
+                </div>
+
+                <div class="booking-modal-form-group">
+                  <label for="booking-phone">Phone Number <span class="booking-modal-form-label-small">(Optional)</span></label>
+                  <input 
+                    type="tel" 
+                    id="booking-phone" 
+                    formControlName="phone" 
+                    placeholder="+233 ...">
+                </div>
+
+                <div class="booking-modal-form-submit">
+                  <button 
+                    type="submit" 
+                    class="booking-modal-submit-btn"
+                    [disabled]="bookingForm.invalid || loading">
+                    @if (loading) {
+                      <span class="booking-modal-loading-spinner"></span>
+                      <span>Scheduling...</span>
+                    } @else {
+                      <span>Schedule Event</span>
+                    }
+                  </button>
+                </div>
+
+                @if (submitStatus === 'error') {
+                  <div class="booking-modal-submit-error">
+                    {{ errorMessage }}
+                  </div>
+                }
+              </form>
+            </div>
+          }
+
+          @if (currentStep() === 3) {
+            <!-- Step 3: Success Confirmation -->
+            <div class="booking-modal-success-view">
+              <div class="booking-modal-success-icon-wrapper">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" class="booking-modal-success-icon">
+                  <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+              </div>
+              <h3 class="booking-modal-success-title">Confirmed!</h3>
+              <p class="booking-modal-success-subtitle">
+                You are scheduled with <strong>Open Base Africa</strong>.
+              </p>
+
+              <hr class="booking-modal-success-divider">
+
+              <div class="booking-modal-success-details">
+                <h4 class="booking-modal-success-event-name">30-Minute Consultation</h4>
+                
+                <div class="booking-modal-success-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="booking-modal-success-icon">
+                    <rect x="3" y="4" width="18" height="17" rx="2"/>
+                    <path d="M3 9h18M8 2v4M16 2v4"/>
+                  </svg>
+                  <span>{{ selectedTimeSlot }} - {{ getEndTimeSlot() }}</span>
+                </div>
+                <div class="booking-modal-success-meta-date">
+                  {{ selectedFullDateString() }}
+                </div>
+                
+                <div class="booking-modal-success-meta-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="booking-modal-success-icon">
+                    <rect x="2" y="6" width="14" height="12" rx="2"/>
+                    <path d="M16 10l6-3v10l-6-3"/>
+                  </svg>
+                  <span>Google Meet details will be sent in a calendar invitation.</span>
+                </div>
+              </div>
+
+              <p class="booking-modal-success-footer">
+                A calendar invitation has been sent to <strong>{{ bookingForm.value.email }}</strong>.
+              </p>
+
+              <div class="booking-modal-success-actions">
+                <button class="booking-modal-success-close-btn" (click)="close()">
+                  Close
+                </button>
+              </div>
+            </div>
+          }
+        </div>
+
+        <!-- Footer -->
+        <div class="booking-modal-footer">
+          <div class="booking-modal-footer-item">
+            <svg class="booking-modal-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2 3 6v6c0 5 4 8.5 9 10 5-1.5 9-5 9-10V6l-9-4z"/>
+              <path d="M9 12l2 2 4-4"/>
+            </svg>
+            <p>Your information is secure<br>and will never be shared.</p>
+          </div>
+          <div class="booking-modal-footer-item">
+            <svg class="booking-modal-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+            <p>Questions?<br><a href="mailto:info@openbase.africa">info@openbase.africa</a></p>
+          </div>
+          <div class="booking-modal-footer-item">
+            <svg class="booking-modal-footer-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18M12 3c2.5 2.5 4 6 4 9s-1.5 6.5-4 9c-2.5-2.5-4-6-4-9s1.5-6.5 4-9z"/>
+            </svg>
+            <p>Learn more about us<br><a href="https://openbase.africa" target="_blank" rel="noopener">openbase.africa</a></p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+}

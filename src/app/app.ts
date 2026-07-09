@@ -1,11 +1,13 @@
-import { Component, signal, inject, OnInit, OnDestroy } from '@angular/core';
+import { Component, signal, inject, OnInit, OnDestroy, HostListener } from '@angular/core';
 import { Router, RouterOutlet, NavigationStart, NavigationEnd, NavigationCancel, NavigationError } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { SeoRouterService } from './services/seo';
+import { BookingModalService } from './services/booking-modal';
+import { BookingModal } from './core/booking-modal/booking-modal';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, BookingModal],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
@@ -14,6 +16,16 @@ export class App implements OnInit, OnDestroy {
   private router = inject(Router);
   private sub!: Subscription;
   private seoRouterService = inject(SeoRouterService);
+  private bookingModalService = inject(BookingModalService);
+
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: Event) {
+    const target = (event.target as HTMLElement).closest('[data-booking-modal]');
+    if (target) {
+      event.preventDefault();
+      this.bookingModalService.openPopup();
+    }
+  }
 
   /** True while a route transition is in progress */
   loading = signal(false);
