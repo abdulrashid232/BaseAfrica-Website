@@ -26,8 +26,8 @@ export class CountUp implements OnInit, OnDestroy {
   constructor(private el: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
-    // Show "0" (or the non-numeric format) initially
-    this.el.nativeElement.textContent = this.formatValue(0);
+    // Show the final value initially for SEO/crawlers
+    this.el.nativeElement.textContent = this.appCountUp.trim();
 
     // 1. Guard for Server-Side Rendering
     if (!this.isBrowser) {
@@ -39,6 +39,8 @@ export class CountUp implements OnInit, OnDestroy {
         for (const entry of entries) {
           if (entry.isIntersecting && !this.hasAnimated) {
             this.hasAnimated = true;
+            // Start animation from 0
+            this.el.nativeElement.textContent = this.formatValue(0);
             this.animate();
           }
         }

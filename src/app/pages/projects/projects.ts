@@ -125,14 +125,14 @@ export class Projects {
         { value: '24/7', label: 'Operation' }
       ],
       images: [
-        { src: 'assets/Boatpoint/4.jpg', alt: 'Performance dashboards' },
-        { src: 'assets/Boatpoint/5.jpg', alt: 'Operations team at work' },
-        { src: 'assets/Boatpoint/6.jpg', alt: 'Operations team at work' },
-        { src: 'assets/Boatpoint/7.jpg', alt: 'Operations team at work' }
+        { src: 'assets/project-1/4.jpg', alt: 'Performance dashboards' },
+        { src: 'assets/project-1/5.jpg', alt: 'Operations team at work' },
+        { src: 'assets/project-1/6.jpg', alt: 'Operations team at work' },
+        { src: 'assets/project-1/7.jpg', alt: 'Operations team at work' }
       ],
       videos: [
-        { src: 'assets/Boatpoint/video_2026-06-21_23-11-43.mp4', title: 'Operations Overview' },
-        { src: 'assets/Boatpoint/IMG_4924.MP4', title: 'Team Interview' }
+        { src: 'assets/project-1/operations-overview.mp4', title: 'Operations Overview' },
+        { src: 'assets/project-1/team-interview.mp4', title: 'Team Interview' }
       ],
       wins: {
         large: [
