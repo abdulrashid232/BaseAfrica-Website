@@ -52,23 +52,23 @@ export class Home {
   packages = [
     {
       name: 'Starter',
-      range: '$2,500 – $5,000/mo',
+      range: '$3,000 – $8,000/mo',
       description: 'Ideal for early-stage companies testing offshore. Get a small dedicated team with shared infrastructure and business-hours support.',
-      highlights: ['1–5 team members', 'Shared office space', 'Business-hours support', 'Monthly reporting'],
+      highlights: ['~10 team members', 'Shared office space', 'Business-hours support', 'Monthly reporting'],
       featured: false
     },
     {
       name: 'Growth',
-      range: '$5,000 – $15,000/mo',
+      range: '$10,000 – $25,000/mo',
       description: 'For scaling companies that need a private office, dedicated recruits, and extended operational coverage.',
-      highlights: ['5–25 team members', 'Private office', '24/7 support', 'Weekly KPI reports'],
+      highlights: ['20–50 team members', 'Private office', '24/7 support', 'Weekly KPI reports'],
       featured: true
     },
     {
       name: 'Enterprise',
-      range: '$15,000+/mo',
+      range: '$25,000 – $50,000+/mo',
       description: 'Full build-operate-transfer for enterprises needing custom build-outs, dedicated management, and SLA guarantees.',
-      highlights: ['25+ team members', 'Custom build-out', 'Dedicated account manager', 'Live dashboard & SLA'],
+      highlights: ['50–150+ team members', 'Custom build-out', 'Dedicated account manager', 'Live dashboard & SLA'],
       featured: false
     }
   ];

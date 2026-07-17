@@ -69,7 +69,7 @@ export class Services {
   customBuild = {
     title: 'Custom Offshore Build',
     tagline: 'Our Flagship Offer',
-    description: 'The full package, a turnkey offshore operation designed, built, and run entirely by OpenBaseAfrica. You bring the vision; we deliver everything else.',
+    description: 'The full package, a turnkey offshore operation designed, built, and run entirely by Open Base Africa. You bring the vision; we deliver everything else.',
     items: [
       'End-to-end project management',
       'Legal entity formation & compliance',

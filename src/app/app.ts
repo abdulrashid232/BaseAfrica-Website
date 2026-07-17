@@ -10,7 +10,7 @@ import { SeoRouterService } from './services/seo';
   styleUrl: './app.css'
 })
 export class App implements OnInit, OnDestroy {
-  protected readonly title = signal('OpenBaseAfrica');
+  protected readonly title = signal('Open Base Africa');
   private router = inject(Router);
   private sub!: Subscription;
   private seoRouterService = inject(SeoRouterService);

@@ -26,8 +26,9 @@ export class CountUp implements OnInit, OnDestroy {
   constructor(private el: ElementRef<HTMLElement>) {}
 
   ngOnInit(): void {
-    // Show "0" (or the non-numeric format) initially
-    this.el.nativeElement.textContent = this.formatValue(0);
+    // Show the target value initially so crawlers/SEO see the real number
+    // The animation will count up to this value when the element comes into view
+    this.el.nativeElement.textContent = this.appCountUp.trim();
 
     // 1. Guard for Server-Side Rendering
     if (!this.isBrowser) {
