@@ -20,7 +20,7 @@ export class App implements OnInit, OnDestroy {
 
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: Event) {
-    const target = (event.target as HTMLElement).closest('[data-booking-modal]');
+    const target = (event.target as HTMLElement)?.closest('[data-booking-modal]');
     if (target) {
       event.preventDefault();
       this.bookingModalService.openPopup();
