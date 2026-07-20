@@ -50,7 +50,7 @@ export class About {
       name: 'Fred Bonney',
       role: 'Director of Workforce & Outsourcing',
       bio: 'Oversees all recruitment, training, and workforce operations. Ensures every team deployed meets client-specific performance and culture standards.',
-      image: '../assets/Fred Bonney.jpeg'
+      image: '../assets/Fred-Bonney.jpeg'
     },
     {
       name: 'Kofi Safo',

@@ -133,6 +133,14 @@ export class Projects {
       videos: [
         { src: 'assets/project-1/operations-overview.mp4', title: 'Operations Overview' },
         { src: 'assets/project-1/team-interview.mp4', title: 'Team Interview' }
+        { src: 'assets/case-study-a/4.jpg', alt: 'Performance dashboards' },
+        { src: 'assets/case-study-a/5.jpg', alt: 'Operations team at work' },
+        { src: 'assets/case-study-a/6.jpg', alt: 'Operations team at work' },
+        { src: 'assets/case-study-a/7.jpg', alt: 'Operations team at work' }
+      ],
+      videos: [
+        { src: 'assets/case-study-a/video_2026-06-21_23-11-43.mp4', title: 'Operations Overview' },
+        { src: 'assets/case-study-a/IMG_4924.MP4', title: 'Team Interview' }
       ],
       wins: {
         large: [

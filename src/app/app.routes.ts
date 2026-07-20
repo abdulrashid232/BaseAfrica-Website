@@ -49,6 +49,7 @@ export const routes: Routes = [
       title: 'About Us & Our Team | Open Base Africa',
       description: 'Meet the leadership team behind Open Base Africa and discover why Ghana is the premier hub for English-speaking, time-zone aligned offshore talent.',
       keywords: 'about openbase africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
+      keywords: 'about open base africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
     }
   },
   {
@@ -57,7 +58,7 @@ export const routes: Routes = [
     data: {
       title: 'Build Your Team - Contact Us | Open Base Africa',
       description: 'Ready to scale your business with a dedicated, fully managed offshore team in Africa? Contact our operational experts today.',
-      keywords: 'contact openbase africa, hire remote team africa, offshore office enquiry, outsource to ghana, business setup africa'
+      keywords: 'contact open base africa, hire remote team africa, offshore office enquiry, outsource to ghana, business setup africa'
     }
   },
   {
