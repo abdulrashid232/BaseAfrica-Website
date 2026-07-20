@@ -1,7 +1,7 @@
 <header class="w-full h-18.5 flex items-center justify-center px-6 bg-white fixed z-50 transition-shadow duration-300" [class.header-scrolled]="isScrolled">
    <div class="w-full max-w-295 flex items-center justify-between">
          <a routerLink="/home">
-            <img src="/assets/Main-Logo.png" alt="main-logo" class="h-24 w-auto">
+            <img src="/assets/main-logo.png" alt="main-logo" class="h-24 w-auto">
          </a>
 
       <!-- Desktop Navigation -->
@@ -15,9 +15,9 @@
 
       <!-- Desktop CTA Button -->
       <div class="hidden lg:block">
-         <a href="https://calendly.com/openbaseafrica/30min" target="_blank" class="btn-primary shadow-sm hover:shadow inline-block">
+         <button data-booking-modal class="btn-primary shadow-sm hover:shadow">
             Book a Call
-         </a>
+         </button>
       </div>
 
       <!-- Mobile Menu Toggle Button -->
@@ -43,7 +43,7 @@
             </a>
          }
          <div class="pt-4 border-t border-line">
-            <button routerLink="/contact" (click)="toggleMobileMenu()" class="w-full btn-primary shadow-sm">
+            <button data-booking-modal (click)="toggleMobileMenu()" class="w-full btn-primary shadow-sm">
                Book a Call
             </button>
          </div>

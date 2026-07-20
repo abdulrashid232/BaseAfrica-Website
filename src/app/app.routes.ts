@@ -13,7 +13,7 @@ export const routes: Routes = [
         '@type': 'Organization',
         'name': 'Open Base Africa',
         'url': 'https://openbaseafrica.com',
-        'logo': 'https://openbaseafrica.com/assets/Main%20Logo.png',
+        'logo': 'https://openbaseafrica.com/assets/main-logo.png',
         'sameAs': [
           'https://www.linkedin.com/company/open-base-africa/',
           'https://x.com/openbaseafrica',
@@ -48,6 +48,7 @@ export const routes: Routes = [
     data: {
       title: 'About Us & Our Team | Open Base Africa',
       description: 'Meet the leadership team behind Open Base Africa and discover why Ghana is the premier hub for English-speaking, time-zone aligned offshore talent.',
+      keywords: 'about openbase africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
       keywords: 'about open base africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
     }
   },

@@ -40,6 +40,8 @@ export class CountUp implements OnInit, OnDestroy {
         for (const entry of entries) {
           if (entry.isIntersecting && !this.hasAnimated) {
             this.hasAnimated = true;
+            // Start animation from 0
+            this.el.nativeElement.textContent = this.formatValue(0);
             this.animate();
           }
         }

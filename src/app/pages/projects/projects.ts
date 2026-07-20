@@ -125,6 +125,14 @@ export class Projects {
         { value: '24/7', label: 'Operation' }
       ],
       images: [
+        { src: 'assets/project-1/4.jpg', alt: 'Performance dashboards' },
+        { src: 'assets/project-1/5.jpg', alt: 'Operations team at work' },
+        { src: 'assets/project-1/6.jpg', alt: 'Operations team at work' },
+        { src: 'assets/project-1/7.jpg', alt: 'Operations team at work' }
+      ],
+      videos: [
+        { src: 'assets/project-1/operations-overview.mp4', title: 'Operations Overview' },
+        { src: 'assets/project-1/team-interview.mp4', title: 'Team Interview' }
         { src: 'assets/case-study-a/4.jpg', alt: 'Performance dashboards' },
         { src: 'assets/case-study-a/5.jpg', alt: 'Operations team at work' },
         { src: 'assets/case-study-a/6.jpg', alt: 'Operations team at work' },
