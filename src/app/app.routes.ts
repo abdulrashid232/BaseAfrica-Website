@@ -49,7 +49,6 @@ export const routes: Routes = [
       title: 'About Us & Our Team | Open Base Africa',
       description: 'Meet the leadership team behind Open Base Africa and discover why Ghana is the premier hub for English-speaking, time-zone aligned offshore talent.',
       keywords: 'about openbase africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
-      keywords: 'about open base africa, Kelvin Nana Boateng, outsourcing ghana leadership, ghana remote workforce, business support africa'
     }
   },
   {

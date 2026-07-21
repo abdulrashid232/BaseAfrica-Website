@@ -55,9 +55,6 @@ export class Home {
       range: '$3,000 – $8,000 / mo',
       description: 'For early-stage companies testing the offshore model with a lean, focused team.',
       highlights: ['~10 staff members', 'Basic office setup', 'Light management & reporting', 'Business-hours support', 'Monthly performance summary'],
-      range: '$3,000 – $8,000/mo',
-      description: 'Ideal for early-stage companies testing offshore. Get a small dedicated team with shared infrastructure and business-hours support.',
-      highlights: ['~10 team members', 'Shared office space', 'Business-hours support', 'Monthly reporting'],
       featured: false
     },
     {
@@ -65,9 +62,6 @@ export class Home {
       range: '$10,000 – $25,000 / mo',
       description: 'For scaling teams that need full management, private infrastructure, and regular insight.',
       highlights: ['20–50 staff members', 'Private office & full fit-out', 'Full workforce management', 'Regular KPI reporting', '24/7 operational support', 'Dedicated HR & ops contact'],
-      range: '$10,000 – $25,000/mo',
-      description: 'For scaling companies that need a private office, dedicated recruits, and extended operational coverage.',
-      highlights: ['20–50 team members', 'Private office', '24/7 support', 'Weekly KPI reports'],
       featured: true
     },
     {
@@ -75,9 +69,6 @@ export class Home {
       range: '$25,000 – $50,000+ / mo',
       description: 'For enterprises needing dedicated infrastructure, large teams, and an accountable operations manager.',
       highlights: ['50–150+ staff members', 'Full custom infrastructure', 'Dedicated operations manager', 'Live dashboards & SLA guarantees', 'Priority escalation paths', 'Strategic growth planning'],
-      range: '$25,000 – $50,000+/mo',
-      description: 'Full build-operate-transfer for enterprises needing custom build-outs, dedicated management, and SLA guarantees.',
-      highlights: ['50–150+ team members', 'Custom build-out', 'Dedicated account manager', 'Live dashboard & SLA'],
       featured: false
     }
   ];
